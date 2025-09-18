@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/xitrfpww/brands.clxdigital.ro/
+    - /bin/cp -R * $DEPLOYPATH
