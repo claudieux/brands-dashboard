@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Hub MagnaPharm - Fervex</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .brand-card, .accordion-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .ai-instructions-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Culoarea brandului este injectata aici */
+        :root {
+            --brand-color: #6a279b;
+        }
+        .text-brand { color: var(--brand-color); }
+        .bg-brand { background-color: var(--brand-color); }
+        .hover\:bg-brand-dark:hover { 
+            filter: brightness(0.9);
+        }
+        .icon-brand { color: var(--brand-color); }
+
+        .prose ul > li::marker {
+           color: #6a279b;
+        }
+
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Antet Hero -->
+        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight"><a href="https://brands.clxdigital.ro/" class="text-white hover:text-slate-200 transition-colors duration-300">Brand Hub MagnaPharm</a></h1>
+            <p id="brand-name-header" class="text-brand text-xl md:text-4xl font-semibold mt-2">Fervex</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="https://magnapharmholdings-my.sharepoint.com/:x:/g/personal/claudiu_ciobanu_magnapharm_eu/ERmYrrTfy09Nral2Pf2AE34B_mamzb8pwkodOgJrXDxqCg?e=dzC28E&nav=MTVfezRCMDYyRTYyLTVFQTctNDREQS1CMjYyLUIxRjAyNjM5MTQwRn0" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Planificare campanii 📆
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EjSd5_8aT5dBm-nmsjgIPGwB-EYLoQ81sjwcjkTXB4nrMg?e=g8na7W" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Imagini produse 🖼️
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EoBpGsSwqY9Lismo9XPU2VwBz6YeDfe54QprvhGzAGLD-g?e=wn4VOV" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Logo 🎨
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sectiune Informatii Generale Brand -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Sumar strategic</h2>
+                <div id="brand-info" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Continut generat de JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sectiune Produse - Acordeon -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Portofoliu de produse</h2>
+                <div id="products-accordion" class="space-y-4">
+                    <!-- Acordeoane generate de JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sectiune Instructiuni AI -->
+            <div>
+                 <h2 class="text-3xl font-bold text-slate-800 mb-4 text-center">Instrucțiuni de sistem Asistent AI personalizat 🤖</h2>
+                 <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto">Folosește instrucțiunile de mai jos pentru a crea un asistent AI personalizat în ChatGPT, gata să te ajute cu sarcinile de marketing pentru brand. Urmează ghidul rapid de mai jos.</p>
+
+                 <!-- Ghid de creare in 3 pasi -->
+                <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Pasul 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">1</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Crearea proiectului</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">În ChatGPT, apasă pe <strong class="font-semibold text-slate-700">New Project</strong> în bara laterală, numește proiectul (ex: Fervex), apoi apasă <strong class="font-semibold text-slate-700">Create</strong>.</p>
+                    </div>
+                    <!-- Pasul 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">2</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Adăugarea instrucțiunilor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Apasă pe cele 3 puncte (dreapta-sus) și alege <strong class="font-semibold text-slate-700">Add Instructions</strong>. Lipește textul copiat de mai jos și apasă <strong class="font-semibold text-slate-700">Save</strong>.</p>
+                    </div>
+                    <!-- Pasul 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">3</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Încărcarea fișierelor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">(Recomandat) Apasă pe <strong class="font-semibold text-slate-700">Add Files</strong> pentru a încărca materiale relevante (prezentări, broșuri) pentru un context complet.</p>
+                    </div>
+                </div>
+
+                 <div id="ai-instructions-accordion" class="space-y-4 max-w-5xl mx-auto">
+                    <!-- Acordeon AI generat de JavaScript -->
+                 </div>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-20 text-slate-500">
+            <div class="mb-10">
+                <h3 class="text-xl font-bold text-slate-700 mb-6">Responsabili brand</h3>
+                <div id="responsabili-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto justify-center">
+                    <!-- Continut generat de JS -->
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2025 Brand Hub Dashboard. Property of MagnaPharm Marketing & Sales Romania</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- DATE INJECTATE ---
+        
+        const brandData = {
+            "name": "FERVEX",
+            "essence": "\"Fervex - expertul tău în paracetamol\". Fervex este expertul în paracetamol care, prin cele două linii-umbrelă — Fervex Răceală & Gripă și Fervex Durere & Febră — transformă cercetarea de ultimă oră și standardele de calitate în soluții rapide, sigure și ușor de administrat, adaptate fiecărei vârste și ocazii de consum. Un brand matur, de încredere, Fervex promite alinarea rapidă și eficientă a durerii, febrei și simptomelor asociate răcelii, astfel încât întreaga familie să-și recapete vitalitatea și ritmul de zi cu zi în cel mai scurt timp.",
+            "objective": "Poziționarea gamei <b>Fervex Răceală și Gripă</b> ca <b>soluția preferată de consumatori</b> în segmentul său cheie și extinderea gamei <b>Fervex Durere și Febră</b> pentru a deveni o <b>opțiune principală</b> în managementul durerii și febrei.<br><br>Aceste obiective vor fi susținute prin creșterea vizibilității brandului, consolidarea încrederii din partea medicilor și farmaciștilor și atragerea de noi consumatori prin campanii de informare și educare.",
+            "voice": "Expert, De încredere, Empatic, Clar & Accesibil, Profesional, Reassuring (liniștitor), Eficient"
+        };
+
+        const productsData = [
+            // GAMA RACEALA SI GRIPA
+            {
+                "name": "FERVEX RĂCEALĂ ȘI GRIPĂ PENTRU ADULȚI (AROMĂ LĂMÂIE)",
+                "description_short": "Tratament simptomatic pentru răceală și gripă la adulți și copii +15 ani. Granule pentru soluție orală cu aromă de lămâie.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 4.8% market share, units sell out în categoria Răceală și Gripă<br><b>Arie terapeutică:</b> Răceală și gripă</p>" },
+                    { "title": "Descriere", "content": "<p>Tratamentul simptomatic al răcelilor comune, rinitelor alergice și vasomotorii, stărilor gripale. Indicat pentru ameliorarea strănutului, secreției nazale apoase, inflamației mucoaselor nazală și sinusală, febrei, durerilor de cap și musculare.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Granule pentru soluție orală</li><li>Compoziție per plic: paracetamol 500 mg, acid ascorbic 200 mg, maleat de feniramină 25 mg</li><li>Mod de administrare: plicul se dizolvă în apă rece sau fierbinte; se recomandă administrarea seara, de la apariția primelor simptome</li><li>Frecvența: 2-3 plicuri pe zi</li><li>Interval minim între administrări: 4 ore</li><li>Indicat: adulților și copiilor +15 ani</li><li>Aromă: lămâie</li><li>Ambalaj: 8 plicuri per cutie</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Formulă completă cu acțiune triplă asupra celor mai comune simptome de răceală și gripă: durere de cap, strănut, febră, secreții nazale, nas înfundat, congestie sinusală, dureri musculare</li><li>Concentrație mare de antihistaminic (feniramină) cu acțiune rapidă asupra sistemului respirator - desfundă nasul, oprește lacrimarea ochilor</li><li>Combinație optimă de ingrediente active (paracetamol, feniramină, vitamina C) pentru susținerea sistemului imunitar și o refacere mai rapidă a organismului</li><li>Indicat adulților și copiilor +15 ani</li><li>Aromă plăcută de lămâie care facilitează administrarea</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorarea rapidă a simptomelor comune asociate răcelii și gripei: durere de cap, strănut, febră, secreții nazale, nas înfundat, congestie sinusală, dureri musculare</li><li>Reducerea febrei și a durerilor musculare</li><li>Calmarea simptomelor de tip alergic precum lacrimarea ochilor</li><li>Contribuie la susținerea sistemului imunitar și la o refacere mai rapidă a organismului datorită conținutului de Vitamina C</li><li>O soluție rapidă, eficientă ce adresează mai multe simptome de răceală și gripă</li></ul>" },
+                    { "title": "Reasons to believe", "content": "<ul><li>Formulă cu trei ingrediente active și acțiune sinergică împotriva răcelii și gripei</li><li>Paracetamol pentru efectul analgezic și antipiretic</li><li>Maleat de feniramină pentru efectul antihistaminic cu acțiune rapidă asupra congestiei nazale</li><li>Acid ascorbic (vitamina C) pentru susținerea sistemului imunitar și o refacere mai rapidă a organismului</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li>Formulă care combină eficient beneficiile celor 3 substanțe active: paracetamol cu efect analgezic, feniramină cu efect antihistaminic și vitamina C</li><li>Acțiune triplă asupra celor mai comune simptome de răceală și gripă</li><li>Granule pentru soluție orală, ușor de dizolvat atât în apă rece, cât și caldă</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p>Adulți și adolescenți cu vârsta peste 15 ani.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți activi între 25-60 de ani care au un stil de viață dinamic și au nevoie de soluții rapide și eficiente pentru a trata simptomele de răceală și gripă fără să își întrerupă activitățile zilnice. Persoane care caută un tratament complet care să adreseze simultan toate simptomele asociate răcelii și gripei.</p>" },
+                    { "title": "Demografie", "content": "<ul><li>Vârstă: 25-60 ani</li><li>Gen: ambele genuri, cu ușoară preponderență feminină (responsabilitatea pentru sănătatea familiei, 60% femei, 40% bărbații)</li><li>Locație: urban și suburban</li><li>Nivel socio-economic: mediu și mediu-ridicat</li><li>Ocupație: angajați cu program complet, părinți activi</li><li>Lifestyle: activ, în căutare de soluții rapide și eficiente bazate pe expertiză</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Simptomele de răceală și gripă care interferează cu programul zilnic și responsabilitățile profesionale și personale. Nevoia de a acționa rapid de la apariția primelor simptome de răceală și gripă. Nevoia de a găsi soluții rapide și eficiente pentru a se simți mai bine și a continua în ritmul obișnuit activitățile de zi cu zi.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Studenți în sesiune de examene care nu își permit/nu au timp să fie bolnavi</li><li>Părinți care trebuie să aibă grijă de copii și nu pot/nu au timp să fie indisponibili</li><li>Persoane în călătorii de afaceri care au nevoie de soluții rapide și eficiente pentru a-și păstra ritmul și activitățile de zi cu zi</li></ul>" },
+                    { "title": "Sezonalitate", "content": "<p>Sezon de vârf: octombrie-martie (sezonul rece, când incidența răcelilor și gripei este maximă). Creștere moderată: septembrie și aprilie (tranziția sezonală). Sezon redus: mai-august (vara, când incidența este minimă). Spike-uri punctuale: perioade cu valuri de gripă sau răceli virale comunitare.</p>" },
+                    { "title": "Competitori principali", "content": "<p>Theraflu, Coldrex, Nurofen, Parasinus, Coldfexin, Faringo Hot Drink</p>" }
+                ]
+            },
+            {
+                "name": "FERVEX RĂCEALĂ ȘI GRIPĂ PENTRU ADULȚI CU AROMĂ DE ZMEURĂ",
+                "description_short": "Tratament simptomatic pentru răceală și gripă la adulți și copii +15 ani. Granule pentru soluție orală cu aromă de zmeură.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 2.6% market share, units sell out în categoria Răceală și Gripă<br><b>Arie terapeutică:</b> Răceală și gripă</p>" },
+                    { "title": "Descriere", "content": "<p>Tratamentul simptomatic al răcelilor comune, rinitelor alergice și vasomotorii, stărilor gripale. Indicat pentru ameliorarea strănutului, secreției nazale apoase, inflamației mucoaselor nazală și sinusală, febrei, durerilor de cap și musculare.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Granule pentru soluție orală cu aromă de zmeură</li><li>Compoziție per plic: paracetamol 500 mg, acid ascorbic 200 mg, maleat de feniramină 25 mg</li><li>Mod de administrare: plicul se dizolvă în apă rece sau fierbinte, rezultând o soluție roz ușor opalescentă. Se recomandă administrarea seara, de la apariția primelor simptome</li><li>Frecvența: 2-3 administrări pe zi</li><li>Interval minim între administrări: 4 ore</li><li>Conține coloranți: galben amurg FCF (E110), roșu allura AC (E129)</li><li>Indicat: adulților și copiilor +15 ani</li><li>Aromă: zmeură</li><li>Ambalaj: 8 plicuri per cutie</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Formulă completă cu acțiune triplă asupra celor mai comune simptome de răceală și gripă</li><li>Concentrație mare de antihistaminic (feniramină) cu acțiune rapidă asupra sistemului respirator</li><li>Combinație optimă de ingrediente active (paracetamol, feniramină, vitamina C)</li><li>Indicat adulților și copiilor +15 ani</li><li><b>Aromă plăcută de zmeură, ușor de acceptat și care facilitează administrarea</b></li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorarea rapidă a simptomelor comune asociate răcelii și gripei</li><li>Reducerea febrei și a durerilor musculare</li><li>Calmarea simptomelor de tip alergic precum lacrimarea ochilor</li><li>Contribuie la susținerea sistemului imunitar și la o refacere mai rapidă a organismului datorită conținutului de Vitamina C</li><li><b>Ușor de acceptat și administrat datorită aromei delicioase de zmeură</b></li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li>Formulă care combină eficient beneficiile celor 3 substanțe active</li><li>Acțiune triplă asupra celor mai comune simptome de răceală și gripă</li><li>Granule pentru soluție orală, ușor de dizolvat atât în apă rece, cât și caldă</li><li><b>Ușor de acceptat și administrat datorită gustului delicios de zmeură</b></li></ul>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți între 25-45 de ani care apreciază experiențele plăcute și sunt sensibili la gustul medicamentelor. Persoane care caută eficacitate dar nu vor să renunțe la confort și care consideră că tratamentul poate fi și o experiență agreabilă, nu doar funcțională.</p>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Simptomele de răceală și gripă care interferează cu programul zilnic și responsabilitățile profesionale și personale. Nevoia de a acționa rapid de la apariția primelor simptome de răceală și gripă. Nevoia de a găsi soluții rapide și eficiente pentru a se simți mai bine și a continua în ritmul obișnuit activitățile de zi cu zi. <b>Preferința pentru aromă de zmeură.</b></p>" }
+                ]
+            },
+            {
+                "name": "FERVEX RĂCEALĂ ȘI GRIPĂ PENTRU COPII FĂRĂ ZAHĂR",
+                "description_short": "Tratament simptomatic pentru răceală și gripă la copii (6-15 ani). Formulă fără zahăr cu aromă de zmeură.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 0.9% market share, units sell out în categoria Răceală și Gripă<br><b>Arie terapeutică:</b> Răceală și gripă pediatrică</p>" },
+                    { "title": "Descriere", "content": "<p>Tratamentul simptomatic al răcelilor comune, rinitelor alergice și vasomotorii, stărilor gripale. Indicat pentru ameliorarea strănutului, secreției nazale apoase, inflamației mucoaselor nazală și sinusală, febrei, durerilor de cap și musculare.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Granule pentru soluție orală fără zahăr</li><li>Compoziție per plic: paracetamol 280 mg, acid ascorbic 100 mg, maleat de feniramină 10 mg</li><li>Mod de administrare: 6-10 ani (2 plicuri/zi), 10-12 ani (3 plicuri/zi), 12-15 ani (4 plicuri/zi); plicuri se dizolvă în apă rece sau caldă. Se recomandă administrarea seara, de la apariția primelor simptome</li><li>Interval minim între administrări: 4 ore</li><li>Aromă de zmeură ușor acceptată de către copii</li><li>Indicat: copii cu vârsta cuprinsă între 6-15 ani</li><li>Culoare: roz deschis până la roz închis</li><li>Îndulcitor: acesulfam de potasiu (fără zahăr adăugat)</li><li>Ambalaj: 8 plicuri</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Formulă completă cu acțiune triplă asupra celor mai comune simptome de răceală și gripă</li><li>Concentrație optimă de antihistaminic (feniramină) cu acțiune rapidă asupra sistemului respirator</li><li>Combinație optimă de ingrediente active (paracetamol, feniramină, vitamina C)</li><li>Indicat copiilor cu vârsta cuprinsă între 6-15 ani</li><li><b>Singura formulă de plicuri împotriva răcelii și gripei \"fără zahăr\" dedicată copiilor</b></li><li>Poate fi administrată inclusiv adulților care suferă de diabet zaharat</li><li>Aromă plăcută de zmeură, ușor de acceptat de către copii și care facilitează administrarea</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorarea rapidă a simptomelor comune asociate răcelii și gripei</li><li>Reducerea febrei și a durerilor musculare</li><li>Calmarea simptomelor de tip alergic precum lacrimarea ochilor</li><li>Contribuie la susținerea sistemului imunitar și la o refacere mai rapidă a organismului datorită conținutului de Vitamina C</li><li>Ușor de acceptat de către copii datorită aromei delicioase de zmeură</li><li>Tratament sigur și eficient pentru simptomele de răceală și gripă la copii</li><li><b>Protejarea dinților copiilor datorită formulei fără zahăr</b></li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li><b>Singurul produs anti-răceală și gripă pentru copii fără zahăr din România</b></li><li>Formulă care combină eficient beneficiile celor 3 substanțe active</li><li>Acțiune triplă asupra celor mai comune simptome de răceală și gripă</li><li>Granule pentru soluție orală, ușor de dizolvat atât în apă rece, cât și caldă</li><li>Ușor de acceptat și administrat copiilor datorită gustului delicios de zmeură</li><li><b>Protecție dentară prin absența zahărului adăugat</b></li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p>Copii cu vârsta între 6 și 15 ani. Contraindicat la copii sub 6 ani.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Părinți activi între 28-45 de ani cu copii de vârstă școlară (6-15 ani) care sunt preocupați de sănătatea copiilor lor și caută soluții sigure și eficiente pentru tratarea simptomelor de răceală și gripă. Părinți informați care acordă atenție ingredientelor. Părinți care caută formule farmaceutice \"fără zahăr\".</p>" },
+                    { "title": "Demografie", "content": "<ul><li>Vârstă: 28-45 ani (părinți)</li><li>Gen: predominant feminin (80% femei - mamele sunt de obicei responsabile cu medicația copiilor)</li><li>Locație: urban și suburban</li><li>Nivel socio-economic: mediu și mediu-ridicat</li><li>Educație: studii superioare</li><li>Copii în gospodărie: 1-3 copii între 6-15 ani</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Nevoia de a trata rapid și eficient simptomele de răceală și gripă la copii. Dorința de a oferi copilului un tratament sigur, eficient și acceptabil gustativ. Îngrijorarea părinților pentru sănătatea dentară a copiilor și impactul zahărului din medicamente asupra dinților.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Părinți ai copiilor cu diabet zaharat sau predispoziție</li><li>Părinți preocupați de educația alimentară sănătoasă</li><li>Părinți care urmează diete fără zahăr pentru întreaga familie</li></ul>" },
+                    { "title": "Sezonalitate", "content": "<p>Sezon de vârf: septembrie-martie (anul școlar când copiii sunt expuși mai mult la infecții). Vârfuri specifice: septembrie (reîntoarcerea la școală), ianuarie (după vacanța de iarnă). Sezon moderat: aprilie-mai (finalul anului școlar). Sezon redus: iunie-august (vacanța de vară când copiii sunt mai puțin expuși).</p>" },
+                    { "title": "Competitori principali", "content": "<p>Coldrex Junior</p>" }
+                ]
+            },
+            // GAMA DURERE SI FEBRA
+            {
+                "name": "FERVEX DURERE ȘI FEBRĂ FORTE",
+                "description_short": "Tratament pentru dureri intense și febră la adulți (+15 ani, +50kg). Comprimate efervescente cu 1000mg Paracetamol.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 0.17% market share, units sell out în categoria Durere și Febră<br><b>Arie terapeutică:</b> Durere și febră</p>" },
+                    { "title": "Descriere", "content": "<p>Fervex durere și febră forte conține paracetamol 1000 mg și este indicat în tratamentul simptomatic al stărilor febrile, durerilor ușoare până la moderate (dureri de cap, stări gripale, dureri de dinți, dureri ale mușchilor sau în caz de menstruație dureroasă), dar și în tratamentul simptomatic al durerilor artrozice.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Comprimate efervescente</li><li>Compoziție: paracetamol 1000 mg per comprimat (doza maximă admisă fără prescripție medicală)</li><li>Ambalaj: 8 comprimate efervescente</li><li>Mod de administrare: comprimatul se dizolvă complet într-un pahar cu apă, se bea imediat</li><li>Dozaj: 1 comprimat la 4-6 ore, maxim 4 comprimate pe zi</li><li>Formă: comprimate rotunde, plate, albe cu linie mediană</li><li>Comprimatul nu se înjumătățește</li><li>Produsul este destinat adulților și copiilor cu vârsta +15 ani (greutate corporală minimă +50 kg)</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li><b>Cea mai mare concentrație de paracetamol din gama Fervex Durere și Febră (1000mg)</b></li><li>Cea mai mare concentrație de paracetamol (1000mg) ce poate fi administrată fără prescripție medicală</li><li>Eficacitate superioară pentru dureri intense și febră ridicată</li><li><b>Formă efervescentă ce asigură o absorbție de 2 ori mai rapidă decât un comprimat clasic</b>, astfel și o acțiune mai rapidă asupra durerii</li><li>Concentrație ridicată de paracetamol pentru adulții care necesită o soluție rapidă și eficace împotriva durerii</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorare rapidă și eficientă a durerilor ușoare până la moderate și/sau febrei ridicate</li><li>Concentrație maximă de paracetamol admisă fără prescripție medicală pentru un efect rapid și eficient împotriva durerii și/sau febrei</li><li>Indicat inclusiv pentru tratamentul pentru durerilor artrozice</li><li>Absorbție de 2 ori mai rapidă decât un comprimat clasic datorită formei efervescente</li><li>Acțiune mai blândă asupra mucoasei gastrice versus un comprimat clasic</li><li>Complianță și biodisponibilitate crescută</li><li>Administrare ușoară</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li><b>Cea mai puternică formulă Fervex pentru durere și febră</b></li><li><b>Singurul produs din gamă cu 1000mg paracetamol per doză</b></li><li>Eficacitate dovedită pentru dureri ușoare până la moderate</li><li>Acoperă un spectru larg de dureri precum: dureri de cap, stări gripale, dureri de dinți, dureri ale mușchilor, menstruație dureroasă, dureri artrozice</li><li>Formă efervescentă ce asigură o eliberare rapidă a substanței active și absorbție superioară versus comprimatele clasice</li><li>Acțiune mai blândă asupra mucoasei gastrice versus un comprimat clasic</li><li>Ideal pentru situații când durerea/febra necesită o acțiune rapidă și eficientă</li><li>Ideal pentru pacienții care preferă alte opțiuni versus comprimatele clasice de tip tablete și/sau capsule</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p>Adulți și adolescenți cu greutatea peste 50 kg (vârsta peste 15 ani). Nu se administrează la persoane cu greutatea sub 50 kg.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți între 30-65 de ani care suferă de dureri ușoare până la moderate (dureri de cap intense, dureri musculare, dureri artrozice, dureri menstruale severe) și au nevoie de o soluție rapidă și eficientă. Persoane care au încercat produse cu concentrații mai scăzute de paracetamol și nu au obținut rezultatul dorit.</p>" },
+                    { "title": "Demografie", "content": "<ul><li>Vârstă: 30-65 ani</li><li>Gen: ușoară preponderență feminină (dureri menstruale, migrene)</li><li>Greutate: obligatoriu peste 50 kg</li><li>Locație: urban și rural</li><li>Nivel socio-economic: mediu</li><li>Ocupație: persoane cu activități zilnice, persoane cu probleme artrozice</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Dureri intense care interferează semnificativ cu activitățile zilnice și nu răspund la doze standard de analgezice. Nevoia de relief rapid și puternic pentru a putea funcționa normal. Frustrarea cauzată de ineficacitatea produselor cu dozaj mai mic.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Persoane cu dureri ușoare până la moderate care au nevoie de soluții rapide și eficiente împotriva durerilor</li><li>Sportivi cu dureri musculare intense post-efort</li><li>Persoane cu migrene recurente</li><li>Persoane cu dureri post-operatorii sau post-traumatice minore</li><li>Persoane care nu pot înghiți comprimate clasice (tablete, capsule)</li></ul>" },
+                    { "title": "Sezonalitate", "content": "<p>Sezonalitate redusă comparativ cu produsele anti-răceală. Creștere ușoară în lunile reci (octombrie-martie) din cauza durerilor articulare agravate de frig și a simptomelor asociate răcelii și gripei (dureri musculare, febră). Vârfuri minore în perioada schimbărilor de sezon când durerile cronice se acutizează. Utilizare constantă pe tot parcursul anului pentru management-ul durerii și febrei. Pattern specific pentru dureri menstruale la femei (ciclic lunar).</p>" },
+                    { "title": "Competitori principali", "content": "<p>Nurofen, Paracetamol, Antinevralgic, Biofen, Paduden</p>" }
+                ]
+            },
+            {
+                "name": "FERVEX DURERE ȘI FEBRĂ",
+                "description_short": "Tratament pentru dureri și febră la adulți și copii +4 ani. Comprimate efervescente cu 500mg Paracetamol, divizibile.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 0.07% market share, units sell out în categoria Durere și Febră<br><b>Arie terapeutică:</b> Durere și febră</p>" },
+                    { "title": "Descriere", "content": "<p>Fervex durere și febră forte conține paracetamol 500 mg și este indicat în tratamentul simptomatic al stărilor febrile și al durerilor de intensitate ușoară până la moderată, cu diferite localizări: cefalee, algii dentare, artralgii, mialgii, dismenoree.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Comprimate efervescente</li><li>Compoziție: paracetamol 500 mg per comprimat</li><li>Ambalaj: 16 comprimate efervescente</li><li>Mod de administrare: comprimatul se dizolvă complet într-un pahar cu apă, se bea imediat</li><li>Dozaj: 1-2 tablete (500mg-1000mg) la 4-6 ore, maxim 4g pe zi</li><li>Formă: comprimate rotunde, plate, albe cu linie mediană de rupere</li><li><b>Comprimatul poate fi divizat în două părți egale</b></li><li>Interval minim între administrări: 4 ore</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li><b>Flexibilitate în dozaj prin posibilitatea de împărțire a comprimatului</b></li><li>Formă efervescentă ce asigură o absorbție de 2 ori mai rapidă decât un comprimat clasic, astfel și o acțiune mai rapidă asupra durerii</li><li>Concentrația standard, 500mg paracetamol, recomandată pentru majoritatea tipurilor de durere de intensitate ușoară până la moderată</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorare rapidă și eficientă a durerilor ușoare până la moderate și/sau a febrei ridicate</li><li>Concentrație standard, 500mg paracetamol, recomandată pentru majoritatea tipurilor de durere de intensitate ușoară până la moderată</li><li>Absorbție de 2 ori mai rapidă decât un comprimat clasic datorită formei efervescente</li><li>Acțiune mai blândă asupra mucoasei gastrice versus un comprimat clasic</li><li>Complianță și biodisponibilitate crescută</li><li>Administrare ușoară</li><li><b>Flexibilitate în ajustarea dozajului - comprimatul poate fi rupt pe jumătate</b></li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li>Eficacitate dovedită pentru dureri ușoare până la moderate</li><li>Acoperă un spectru larg de dureri cu diverse localizări precum: cefalee, algii dentare, artralgii, mialgii, dismenoree</li><li>Formă efervescentă ce asigură o eliberare rapidă a substanței active și absorbție superioară versus comprimatele clasice</li><li>Acțiune mai blândă asupra mucoasei gastrice versus un comprimat clasic</li><li>Ideal pentru situații când durerea/febra necesită o acțiune rapidă și eficientă</li><li>Ideal pentru pacienții care preferă alte opțiuni versus comprimatele clasice de tip tablete și/sau capsule</li><li><b>Permite ajustarea dozei - comprimatul poate fi rupt pe jumătate, astfel se poate administra doar jumătate de comprimat, respectiv 250mg paracetamol</b></li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p>Adulți și copii cu greutatea peste 14 kg (vârsta peste 4 ani). Dozaj adaptat în funcție de greutatea copilului.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți între 25-60 de ani care au nevoie de un analgezic și antipiretic de uz curent pentru managementul durerilor zilnice de intensitate ușoară spre moderată. Persoane care caută o soluție economică și eficientă pentru dureri de cap ocazionale, dureri menstruale, febră și disconfort general.</p>" },
+                    { "title": "Demografie", "content": "<ul><li>Vârstă: 25-60 ani</li><li>Gen: ambele genuri cu ușoară preponderență feminină</li><li>Locație: urban și rural</li><li>Nivel socio-economic: mediu</li><li>Ocupație: persoane cu activități zilnice care au nevoie de o soluție rapidă, eficientă și la îndemână în tratamentul durerii și febrei</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Nevoia de a avea acasă o rezervă de analgezice pentru situații neprevăzute. Dorința de a trata rapid și eficient durerile ocazionale. Necesitatea unui produs de încredere pentru întreaga familie care să ofere siguranță și eficacitate.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Familii cu copii care au nevoie de analgezic pentru toți membrii</li><li>Persoane care vor să aibă mereu în casă o soluție rapidă și eficientă pentru durerile neprevăzute</li></ul>" },
+                    { "title": "Sezonalitate", "content": "<p>Sezonalitate redusă datorită nevoilor constante de analgezice. Creștere ușoară în perioada rece (noiembrie-februarie) pentru tratamentul febrei și durerii asociate răcelii și gripei (dureri musculare). Vârfuri în perioada începutului de școală (septembrie) când părinții vor să aibă mereu la îndemână o soluție rapidă și eficientă. Consumul regulat pe tot parcursul anului pentru dureri zilnice.</p>" }
+                ]
+            },
+            {
+                "name": "FERVEX DURERE ȘI FEBRĂ PENTRU COPII",
+                "description_short": "Tratament pentru febră și dureri la copii (1 lună - 12 ani). Soluție orală cu sistem de dozaj precis.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 0.17% market share, units sell out în categoria Durere și Febră<br><b>Arie terapeutică:</b> Durere și febră pediatrică</p>" },
+                    { "title": "Descriere", "content": "<p>FERVEX durere și febră pentru copii conține paracetamol și este indicat pentru tratamentul simptomatic al febrei și/sau durerilor, cum ar fi dureri de cap, gripă, dureri de dinți, dureri musculare.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Soluție orală</li><li>Compoziție: paracetamol 30 mg per ml</li><li>Ambalaj: flacon 90ml cu linguriță dozatoare graduată inclusă pentru o administrare precisă</li><li>Mod de administrare: direct sau diluat în lichid (apă, lapte, suc)</li><li>Dozaj: 10-15 mg/kg la 4-6 ore, maxim 60 mg/kg pe zi</li><li>Aspect: soluție maronie, ușor vâscoasă, cu aromă de caramel-vanilie</li><li>Linguriță graduată: măsurări de la 2kg la 16kg greutate corporală</li><li>Cap de siguranță pentru copii</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li><b>Concentrație ridicată de paracetamol 30mg/ml optimă în tratamentul durerii și/sau febrei în cazul copiilor</b></li><li><b>Linguriță dozatoare precis graduată pentru o administrare precisă</b></li><li>Aromă plăcută de caramel-vanilie ușor acceptată de către copii</li><li>Soluție, produsul nu are nevoie să fie agitat înaintea de administrare</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Concentrație optimă de paracetamol 30mg/ml pentru tratamentul eficient al durerii și febrei în cazul copiilor</li><li><b>Administrare precisă și sigură datorită linguriței dozatoare gradate în nr. kilograme copil</b></li><li>Poate fi administrat de la vârsta de +1 lună, greutate corporală +4kg</li><li>Ușor de acceptat de către copii datorită gustului plăcut de caramel-vanilie</li><li>Flexibilitate în administrare prin posibilitatea diluării</li><li>Soluție ce nu necesită să se agite înaintea de administrare</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li><b>Cel mai precis sistem de dozaj din categoria pediatrică prin linguriță graduată</b></li><li><b>Administrare de la cea mai fragedă vârstă (1 lună)</b></li><li><b>Aromă unică de caramel-vanilie care face administrarea plăcută</b></li><li>Flexibilitate maximă prin posibilitatea diluării în băuturile preferate ale copilului</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p>Copii cu greutatea de la 4 la 32 kg (vârsta de la 1 lună la 12 ani).</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Părinți 22-40 de ani cu copii cu vârste +1 lună - 12 ani care caută o soluție sigură, precisă și ușor de administrat pentru tratamentul febrei și durerii la copii. Părinți preocupați de siguranță și precizie în dozaj.</p>" },
+                    { "title": "Demografie", "content": "<ul><li>Vârstă: 22-40 ani (părinți)</li><li>Gen: predominant feminin (85% mame)</li><li>Locație: urban și suburban</li><li>Nivel socio-economic: mediu și mediu-ridicat</li><li>Educație: studii superioare</li><li>Copii în gospodărie: bebeluși și copii preșcolari (1 lună - 12 ani)</li><li>Prima experiență: mulți sunt părinți pentru prima dată</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Nevoia unui produs care să fie și sigur, eficient, și ușor de administrat copiilor, îndeosebi copiilor mici. Preocuparea pentru siguranța și eficiența în tratarea rapidă a febrei și durerii la copil, cu un produs ușor de administrat și bine tolerat. Mamele, mai ales cele la primul copil, caută soluții recomandate de medici și în care pot avea deplină încredere, pentru a gestiona momentele de îngrijorare legate de sănătatea micuțului. În plus, ele caută produse ușor acceptate de către copii și apreciază instrucțiuni clare de administrare pentru o dozare precisă.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Bunici care au grijă de nepoți și vor soluții simple, eficiente, rapide și sigure</li><li>Cadrele medicale de la grădiniță care administrează medicamente</li></ul>" },
+                    { "title": "Sezonalitate", "content": "<p>Sezonalitate intensă legată de ciclurile de îmbolnăvire ale copiilor mici - îndeosebi legată de episoadele de răceli, gripe, viroze. Vârf major: octombrie-martie (sezonul rece când copiii se îmbolnăvesc des). Vârfuri specifice: septembrie (adaptarea la grădiniță), ianuarie (după sărbători). Creștere în perioada dentiției la bebeluși (variabilă individual). Pattern mai intensificat decât la adulți din cauza frecvenței mari de episoade febrile la copii mici.</p>" },
+                    { "title": "Competitori principali", "content": "<p>Panadol Baby, Paracetamol pentru copii, BioFlu Baby, Nurofen pentru copii</p>" }
+                ]
+            },
+            {
+                "name": "FERVEX DURERE ȘI FEBRĂ VITAMINA C, 330MG/200MG, 20 COMPRIMATE EFERVESCENTE",
+                "description_short": "Tratament pentru dureri și febră cu adaos de Vitamina C. Pentru adulți și copii +8 ani.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Obiectiv produs:</b> Atingerea unui obiectiv de 0.07% market share, units sell out în categoria Durere și Febră<br><b>Arie terapeutică:</b> Durere și febră cu suplimentare de vitamina C</p>" },
+                    { "title": "Descriere", "content": "<p>FERVEX durere și febră Vitamina C conține paracetamol 330mg și acid ascorbic 200mg și este indicat pentru tratamentul simptomatic al durerilor de intensitate ușoară până la moderată sau/și al stărilor febrile.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Comprimate efervescente</li><li>Compoziție: paracetamol 330 mg și acid ascorbic 200 mg per comprimat</li><li>Ambalaj: 20 comprimate efervescente</li><li>Mod de administrare: comprimatul se dizolvă complet într-un pahar cu apă, se bea imediat</li><li>Dozaj adaptat vârstei: 8-10 ani (1 comprimat), 10-15 ani (1-2 comprimate), peste 15 ani (2 comprimate)</li><li>Interval minim: 4-6 ore în funcție de vârstă</li><li>Linia mediană nu este destinată ruperii</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li><b>Combinația unică paracetamol + vitamina C în concentrații optime</b></li><li><b>Cel mai mare ambalaj din gama Fervex (20 comprimate)</b></li><li><b>Acțiune dublă:</b> tratamentul durerii și/sau febrei + susținerea sistemului imunitar</li><li>Concentrația ridicată de vitamina C (200mg) pentru susținerea sistemului imunitar și efect antioxidant</li><li>Formă efervescentă ce asigură o absorbție de 2 ori mai rapidă decât un comprimat clasic, astfel și o acțiune mai rapidă asupra durerii</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Concentrație optimă de paracetamol 330 mg pentru durerile de intensitate ușoară</li><li><b>Ameliorare rapidă a durerii și febrei plus susținerea sistemului imunitar</b></li><li><b>Suplimentare cu vitamina C pentru recuperare mai rapidă a organismului</b></li><li>Absorbție de 2 ori mai rapidă decât un comprimat clasic datorită formei efervescente</li><li>Acțiune mai blândă asupra mucoasei gastrice versus un comprimat clasic</li><li>Complianță și biodisponibilitate crescută</li><li>Administrare ușoară</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li><b>Combinație unică de paracetamol + vitamina C pentru tratamentul durerii și/sau febrei + susținerea sistemului imunitar</b></li><li>Eficacitate dovedită pentru dureri ușoare până la moderate</li><li>Formă efervescentă ce asigură o eliberare rapidă a substanței active și absorbție superioară versus comprimatele clasice</li><li>Acțiune mai blândă asupra mucoasei gastrice versus un comprimat clasic</li><li>Ideal pentru situații când durerea/febra necesită o acțiune rapidă și eficientă</li><li>Ideal pentru pacienții care preferă alte opțiuni versus comprimatele clasice de tip tablete și/sau capsule</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p>Adulți și copii cu greutatea de 25 kg sau peste (începând cu vârsta de aproximativ 8 ani).</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți cu vârsta 25-60 care au nevoie de soluție rapidă și eficientă împotriva durerilor de intensitate ușoară până la moderată. Adulți care caută să susțină sistemul imunitar pentru o recuperare mai rapidă a organismului. Adulți interesați de inovație și care caută formule complexe.</p>" },
+                    { "title": "Demografie", "content": "<ul><li>Vârstă: 25-60 ani</li><li>Gen: ambele genuri cu ușoară preponderență feminină</li><li>Locație: urban și rural</li><li>Nivel socio-economic: mediu-ridicat</li><li>Lifestyle: activ, orientat către wellness și sănătate holistică</li><li>Comportament: consumatori care caută beneficii multiple într-un singur produs</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Dorința de a nu se limita doar la tratamentul durerilor ocazionale, ci de a susține activ sistemul imunitar pentru o recuperare mai rapidă și completă. Căutarea unui tratament complet care să abordeze atât durerile immediate, dar care să susțină și recuperarea pe termen lung.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Persoane cu episoade frecvente de durere de cap sau febră care își doresc pe lângă acțiunea rapidă și eficientă împotriva durerii și o susținere a sistemului imunitar pentru o recuperare mai rapidă a organismului</li><li>Familii cu copii +8 ani care vor un produs ce adresează nevoile întregii familii</li></ul>" },
+                    { "title": "Sezonalitate", "content": "<p>Sezonalitate redusă datorită nevoilor constante de analgezice. Creștere ușoară în perioada rece (noiembrie-februarie) pentru tratamentul febrei și durerii asociate răcelii și gripei (dureri musculare). Vârfuri în perioada începutului de școală (septembrie) când părinții vor să aibă mereu la îndemână o soluție rapidă și eficientă. Consumul regulat pe tot parcursul anului pentru dureri zilnice ușoare până la moderate.</p>" },
+                    { "title": "Competitori principali", "content": "<p>Nurofen, Paracetamol, Antinevralgic, Biofen, Paduden</p>" }
+                ]
+            }
+        ];
+
+        const instructionsText = `# INSTRUCȚIUNI DE SISTEM — FERVEX
+
+## 1. ROL
+Ești Asistentul pentru brandul **FERVEX**. Scop: să asisti echipa de marketing în generarea de conținut, strategii și suport operațional pentru gama de medicamente OTC FERVEX - expertul în paracetamol pentru întreaga familie.
+
+## 2. REFERINȚE LA INFORMAȚII
+**IMPORTANT:** Toate informațiile detaliate despre brand, cele 7 produse organizate pe 2 game, audiențele țintă, beneficii, USP-uri, competitori și alte date specifice se găsesc în fișierul \`informatii_fervex.txt\`. 
+
+Consultă întotdeauna acest fișier pentru:
+- Descrierile exacte ale celor 7 produse organizate pe 2 game:
+
+### GAMA RĂCEALĂ ȘI GRIPĂ (3 produse):
+- **Fervex Răceală și Gripă pentru Adulți** (15+) - aromă lămâie, granule
+- **Fervex Răceală și Gripă cu Zmeură** (15+) - aromă zmeură, granule  
+- **Fervex Răceală și Gripă pentru Copii** (6-15 ani) - fără zahăr, granule
+
+### GAMA DURERE ȘI FEBRĂ (4 produse):
+- **Fervex Durere și Febră Forte** (15+, 50kg+) - 1000mg paracetamol, efervescent
+- **Fervex Durere și Febră** (4+) - 500mg paracetamol, efervescent
+- **Fervex Durere și Febră pentru Copii** (1 lună+) - 30mg/ml soluție orală
+- **Fervex Durere și Febră Vitamina C** (8+) - 330mg paracetamol + 200mg vitamina C
+
+- Profilurile audiențelor țintă diferite pentru fiecare gâmă și produs
+- Beneficiile și caracteristicile specifice fiecărui produs
+- USP-urile și diferențiatorii cheie
+- Informațiile despre competitori
+- Sezonalitatea fiecărui produs și gâme
+- Disclaimer-urile legale și vizele ANM obligatorii
+
+## 3. PRINCIPII DE COMUNICARE / TON
+- **Ton:** expert, expertiză, de încredere, empatic, clar & accesibil, profesional, reassuring (liniștitor), eficient
+- **Poziționare:** **"Fervex - expertul tău în paracetamol"**
+- **Abordare:** Brand matur de încredere cu două linii-umbrelă clare
+- **Limbaj:** profesional medical dar accesibil, subliniază expertiza în paracetamol
+- **Focus:** soluții rapide, sigure și ușor de administrat pentru întreaga familie
+- **Obiectiv:** Lider în Răceală și Gripă (8.4% MS) și dezvoltarea gamei Durere și Febră (0.5% MS)
+
+## 4. SPECIFICITĂȚI COMUNICARE FERVEX OTC
+
+### Aspecte cheie de subliniat:
+- **"Expertul în paracetamol"** - mesajul central al brandului
+- **Două linii-umbrelă clare** pentru nevoi specifice
+- **Cercetarea de ultimă oră** și standardele de calitate
+- **Adaptate fiecărei vârste și ocazii** de consum
+- **Absorbție de 2 ori mai rapidă** prin forma efervescentă
+- **Întreaga familie își recapătă vitalitatea** în cel mai scurt timp
+
+### Diferențiatori obligatorii de comunicat:
+- Expertiză în paracetamol pentru toate vârstele
+- Formate efervescente cu absorbție superioară
+- Gamă completă pentru întreaga familie
+- Inovație constantă (fără zahăr, vitamina C, doze maxime)
+- Calitate și siguranță conform standardelor europene
+
+## 5. CONSTRÂNGERI DE COMUNICARE / LEGAL OTC
+- **OBLIGATORIU:** Include disclaimer-ul ANM cu viza de publicitate pentru toate materialele
+- **IMPORTANT:** Sunt medicamente OTC cu restricții stricte de promovare
+- **FĂRĂ SOCIAL MEDIA:** Nu se generează conținut pentru social media fiind OTC
+- **VÂRSTĂ ȘI GREUTATE:** Respectă strict limitările pentru fiecare produs
+- **DOZAJ:** Respectă recomandările precise de dozaj și intervale
+- **MEDICUL:** Încurajează consultarea medicului când este cazul
+- **CLAIMS:** Doar claims validate clinic, fără exagerări
+
+## 6. INSTRUCȚIUNI PENTRU RĂSPUNSURI
+
+### Pentru alegerea produsului potrivit:
+**ALGORIM DE SELECȚIE:**
+1. **Identifică categoria:** Răceală/Gripă sau Durere/Febră?
+2. **Determină vârsta:** Copii vs. Adulți + greutatea corporală
+3. **Evaluează intensitatea:** Simptome simple vs. complexe vs. severe
+4. **Consideră preferințele:** Aromă, formă farmaceutică, inovații
+
+### Pentru materiale educative/medicale:
+Structurează ca:
+- **Categoria problemei** (răceală/gripă vs. durere/febră)
+- **Produsul potrivit** din gama respectivă cu justificarea
+- **Expertiza în paracetamol** și mecanismul de acțiune
+- **Avantajele formei farmaceutice** (efervescent, granule, soluție)
+- **Modul de administrare** și restricțiile de vârstă/greutate
+- **Siguranța și eficacitatea** validate clinic
+- **Încurajarea consultării medicale** pentru copii mici și cazuri complexe
+
+### Pentru profesioniștii medicali:
+- Focus pe expertiza în paracetamol și formulări
+- Concentrațiile și biodisponibilitatea optimă
+- Profilul de siguranță pentru diferite vârste
+- Diferențierea față de competitori
+- Recomandări de utilizare clinică
+
+## 7. DIFERENȚIEREA PE GAME ÎN COMUNICARE
+
+## GAMA RĂCEALĂ ȘI GRIPĂ
+
+### Caracteristici comune game:
+- **Acțiune triplă:** paracetamol + feniramină + vitamina C
+- **Target sezonier:** octombrie-martie (vârf), septembrie și aprilie (tranziție)
+- **Format granule** care se dizolvă în apă rece sau caldă
+- **Administrare serală** de la primele simptome
+
+### Fervex Răceală Gripă Adulți (Lămâie) - 15+:
+- **Audiența:** Adulți activi 25-60 ani cu program dinamic
+- **Focus:** Soluție completă pentru reluarea activităților rapide
+- **USP:** Acțiune triplă asupra tuturor simptomelor comune
+
+### Fervex Răceală Gripă Zmeură - 15+:
+- **Audiența:** Adulți 25-45 ani sensibili la experiența plăcută
+- **Focus:** Eficacitate fără compromisuri la confort
+- **USP:** Gust delicios de zmeură care face tratamentul plăcut
+
+### Fervex Răceală Gripă Copii - 6-15 ani:
+- **Audiența:** Părinți 28-45 ani cu copii școlari, atenți la zahăr
+- **Focus:** Singura formulă fără zahăr pentru copii din România
+- **USP:** Protecție dentară + eficacitate pentru colectivități
+
+## GAMA DURERE ȘI FEBRĂ
+
+### Caracteristici comune gâme:
+- **Expertiza în paracetamol** în diferite concentrații
+- **Format efervescent** cu absorbție de 2x mai rapidă
+- **Pattern constant** pe tot parcursul anului
+- **Flexibilitate în dozare** pentru diferite intensități
+
+### Fervex durere și febră forte, 1000mg, 8 comprimate efervescente - 15+ (50kg+):
+- **Audiența:** Adulți 30-65 ani cu dureri intense care nu cedează
+- **Focus:** Concentrația maximă admisă fără prescripție (1000mg)
+- **USP:** Cea mai puternică formulă Fervex pentru dureri severe
+
+### Fervex durere și febră, 500mg, 16 comprimate efervescente - 4+:
+- **Audiența:** Familii 25-60 ani pentru managementul zilnic al durerii
+- **Focus:** Soluția standard economică cu flexibilitate (poate fi rupt)
+- **USP:** Flexibilitate în dozare + raport calitate-preț
+
+### Fervex durere și febră pentru copii, 30mg/ml, soluție orală - 1 lună+:
+- **Audiența:** Părinți tineri 22-40 ani cu copii mici
+- **Focus:** Precizia și siguranța pentru cei mai vulnerabili
+- **USP:** Cel mai precis sistem de dozaj din categoria pediatrică
+
+### Fervex durere și febră Vitamina C, 330mg/200mg, 20 comprimate efervescente - 8+:
+- **Audiența:** Adulți 25-60 ani orientați către wellness holistic
+- **Focus:** Tratament + susținere sistem imunitar simultane
+- **USP:** Combinația unică paracetamol + vitamina C
+
+## 8. WORKFLOW RECOMANDAT
+1. **Identifică categoria de probleme** (răceală/gripă vs. durere/febră)
+2. **Determină profilul utilizatorului** (vârstă, greutate, intensitate)
+3. **Selectează produsul potrivit** din gama corespunzătoare
+4. **Consultă** \`informatii_fervex.txt\` pentru detalii complete
+5. **Adaptează** tonul la categoria și audiența produsului
+6. **Subliniază** expertiza în paracetamol și diferențiatorii specifici
+7. **Include** toate informațiile legale obligatorii (disclaimer + viză)
+8. **Recomandă** consultarea medicului pentru cazuri complexe
+
+## 9. GRUPURI ȚINTĂ SPECIFICE
+
+### Pentru Gama Răceală și Gripă:
+- **Ton:** Urgent și comprehensiv pentru reluarea activităților
+- **Context:** Interferența cu programul zilnic, nevoia de acțiune rapidă
+- **Sezonalitate:** Comunicare intensă octombrie-martie
+
+### Pentru Gama Durere și Febră:
+- **Ton:** Expert și reassuring pentru management zilnic
+- **Context:** Nevoi constante, managementul durerii recurente
+- **Sezonalitate:** Comunicare constantă cu accent pe periods intense
+
+### Pentru Produse Pediatrice:
+- **Ton:** Foarte empatic și orientat către siguranță
+- **Audiența:** Părinți îngrijorați care caută expertiză de încredere
+- **Focus:** Precizie, siguranță, acceptabilitate pentru copii
+
+### Pentru Adulți Activi:
+- **Ton:** Eficient și orientat către rezultate rapide
+- **Audiența:** Profesioniști care nu își permit să fie indisponibili
+- **Focus:** Reluarea rapidă a ritmului normal de viață
+
+## 10. ASPECTE DE SIGURANȚĂ CRITICE
+- **Paracetamol:** Respectă strict dozele maxime pe vârstă/greutate
+- **Forme efervescente:** Nu se administrează nedesfăcute
+- **Copii mici:** Doar sub supravegherea adulților, cu dozare precisă
+- **Interacțiuni:** Atenție la cumul cu alte surse de paracetamol
+- **Durată:** Limitări în durata de administrare, consultarea medicului
+
+## 11. POZIȚIONAREA vs. COMPETITORI
+
+### vs. Theraflu/Coldrex (Răceală-Gripă):
+- Expertiza superioară în paracetamol
+- Gamă completă pentru toate vârstele
+- Inovații unice (fără zahăr pentru copii)
+
+### vs. Nurofen/Paduden (Durere-Febră):
+- Specialização în paracetamol vs. ibuprofen
+- Forme efervescente cu absorbție superioară
+- Sistem de dozare precis pentru pediatric
+
+## 12. OBIECTIVE SPECIFICE DE COMUNICARE
+
+### Pentru Răceală și Gripă:
+- Consolidarea poziției #2 în plicuri adulți
+- Depășirea Coldrex-ului prin expertiză
+- Educarea despre beneficiile acțiunii triple
+
+### Pentru Durere și Febră:
+- Construirea categoriei de la 0.5% MS
+- Educarea despre avantajele paracetamolului vs. AINS
+- Poziționarea ca expert în managementul durerii familiale
+
+## 13. NOTA FINALĂ
+Consultă întotdeauna fișierul \`informatii_fervex.txt\` pentru informații complete și actualizate înainte de a genera orice conținut pentru brandul FERVEX. 
+
+**ATENȚIE CRITICĂ:** Fiind medicamente OTC, respectă strict toate constrângerile legale și nu genera niciodată conținut pentru social media. Fiecare produs are audiența și restricțiile sale specifice - asigură-te că recomanzi produsul corect pentru vârsta, greutatea și intensitatea problemei, subliniind întotdeauna expertiza Fervex în paracetamol și respectând cerințele legale stricte pentru medicamentele OTC.`;
+        
+         const responsabiliData = [
+            { name: "Alexandra Oiță", role: "Marketing Manager", emoji: "⚙️" },
+            { name: "Mirabela Badea", role: "Brand Manager", emoji: "📈" },
+            { name: "Claudiu Ciobanu", role: "Digital Marketing", emoji: "🤖" }
+        ];
+
+        // --- FUNCTII DE RENDERIZARE ---
+
+        function createInfoCard(title, content, iconSvg) {
+            return `
+                <div class="brand-card bg-white p-6 rounded-xl shadow-lg fade-in-up h-full">
+                    <div class="flex items-center mb-3">
+                        ${iconSvg}
+                        <h3 class="text-lg font-bold text-slate-800 ml-3">${title}</h3>
+                    </div>
+                    <p class="text-slate-600 text-base">${content || 'N/A'}</p>
+                </div>
+            `;
+        }
+        
+        function renderBrandInfo() {
+            const container = document.getElementById('brand-info');
+            const icons = {
+                essence: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+                objective: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+                voice: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>`
+            };
+            let html = createInfoCard('Esența brandului', brandData.essence, icons.essence);
+            html += createInfoCard('Obiectivul principal', brandData.objective, icons.objective);
+            html += createInfoCard('Vocea brandului', brandData.voice, icons.voice);
+            container.innerHTML = html;
+        }
+
+        function renderProductsAccordion() {
+            const container = document.getElementById('products-accordion');
+            let html = '';
+            productsData.forEach(product => {
+                let detailsHtml = '';
+                product.details.forEach(section => {
+                     detailsHtml += `
+                        <div class="mb-8">
+                            <h4 class="text-lg font-bold text-brand mb-3">${section.title}</h4>
+                            <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">${section.content}</div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-lg fade-in-up">
+                        <h2>
+                            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-bold text-slate-800">${product.name}</span>
+                                    <span class="text-sm font-normal text-slate-500 mt-1 pr-4">${product.description_short}</span>
+                                </div>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 icon-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content">
+                            <div class="border-t border-slate-200 p-6">
+                               ${detailsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderAiInstructions() {
+            const container = document.getElementById('ai-instructions-accordion');
+            const accordionTitle = `# INSTRUCȚIUNI DE SISTEM - ${brandData.name.toUpperCase()}`;
+
+            container.innerHTML = `
+                <div class="bg-slate-800 rounded-xl shadow-lg fade-in-up">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="true">
+                            <span class="text-lg font-bold text-slate-200 font-mono tracking-tight">${accordionTitle}</span>
+                            <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content">
+                        <div class="border-t border-slate-700 p-4 relative ai-instructions-container">
+                             <button id="copy-ai-btn" class="absolute top-6 right-6 bg-brand hover:bg-brand-dark text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 z-10">
+                                Copiază
+                            </button>
+                            <pre id="ai-instructions-text" class="text-slate-200 pr-28">${instructionsText}</pre>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderResponsabili() {
+            const container = document.getElementById('responsabili-container');
+            let html = '';
+            responsabiliData.forEach(person => {
+                html += `
+                     <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">${person.emoji}</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">${person.name}</p>
+                            <p class="text-sm text-slate-500 text-left">${person.role}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function setupButtonListeners() {
+            // Acordeon
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.parentElement.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    button.classList.toggle('active');
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + 100 + "px"; // Add some buffer
+                        content.style.padding = "0";
+                    } else {
+                        content.style.maxHeight = null;
+                        content.style.padding = "0 1.5rem";
+                    }
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('brand-name-header').textContent = brandData.name;
+            document.title = `Brand Hub MagnaPharm - ${brandData.name}`;
+
+            renderBrandInfo();
+            renderProductsAccordion();
+            renderAiInstructions();
+            renderResponsabili();
+            
+            setupButtonListeners();
+            
+            // Auto-open AI instructions
+            const aiAccordionButton = document.querySelector('#ai-instructions-accordion .accordion-button');
+            if (aiAccordionButton) {
+                 aiAccordionButton.click();
+            }
+
+            // Attach listener for the copy button
+            const copyBtn = document.getElementById('copy-ai-btn');
+            if(copyBtn) {
+                 copyBtn.addEventListener('click', () => {
+                    const copyText = document.getElementById('ai-instructions-text').textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = copyText;
+                    
+                    textArea.style.position = "fixed";
+                    textArea.style.top = 0;
+                    textArea.style.left = 0;
+                    textArea.style.width = "2em";
+                    textArea.style.height = "2em";
+                    textArea.style.padding = 0;
+                    textArea.style.border = "none";
+                    textArea.style.outline = "none";
+                    textArea.style.boxShadow = "none";
+                    textArea.style.background = "transparent";
+                    
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        const successful = document.execCommand('copy');
+                        if(successful) {
+                            copyBtn.textContent = 'Copiat!';
+                            copyBtn.classList.remove('bg-brand', 'hover:bg-brand-dark');
+                            copyBtn.classList.add('bg-green-500');
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copiază';
+                                copyBtn.classList.remove('bg-green-500');
+                                copyBtn.classList.add('bg-brand', 'hover:bg-brand-dark');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Nu s-a putut copia textul', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                });
+            }
+
+            // Stagger animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.style.animationDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
+</body>
+</html>
+
+

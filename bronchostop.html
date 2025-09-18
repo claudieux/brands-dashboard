@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Hub MagnaPharm - Bronchostop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .brand-card, .accordion-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .ai-instructions-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Culoarea brandului este injectata aici */
+        :root {
+            --brand-color: #d589bc;
+        }
+        .text-brand { color: var(--brand-color); }
+        .bg-brand { background-color: var(--brand-color); }
+        .hover\:bg-brand-dark:hover { 
+            filter: brightness(90%);
+        }
+        .icon-brand { color: var(--brand-color); }
+
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Antet Hero -->
+        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight"><a href="https://brands.clxdigital.ro/" class="text-white hover:text-slate-200 transition-colors duration-300">Brand Hub MagnaPharm</a></h1>
+            <p id="brand-name-header" class="text-brand text-xl md:text-4xl font-semibold mt-2">Bronchostop</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="https://magnapharmholdings-my.sharepoint.com/:x:/g/personal/claudiu_ciobanu_magnapharm_eu/ERmYrrTfy09Nral2Pf2AE34B_mamzb8pwkodOgJrXDxqCg?e=bXVJCX&nav=MTVfezg4RTJDMTRBLUVDNTQtNDgwRC04RjQyLTYwMzBFRjMwODVGRX0" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Planificare campanii 📆
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EskkaMSOhglHrhiP6aofvysBrtPbjf95AXo9Dm0F_ygPIg?e=x0Q1zC" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Imagini produse 🖼️
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/Etjb8tbGnmFBkergpolVTQwBvB-2pYHFCTVYgFweuhuixA?e=aA3QJr" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Logo 🎨
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sectiune Informatii Generale Brand -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Sumar strategic</h2>
+                <div id="brand-info" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Continut generat de JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sectiune Produse - Acordeon -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Portofoliu de produse</h2>
+                <div id="products-accordion" class="space-y-4">
+                    <!-- Acordeoane generate de JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sectiune Instructiuni AI -->
+            <div>
+                 <h2 class="text-3xl font-bold text-slate-800 mb-4 text-center">Asistent AI personalizat 🤖</h2>
+                 <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto">Folosește instrucțiunile de mai jos pentru a crea un asistent AI personalizat în ChatGPT, gata să te ajute cu sarcinile de marketing pentru brand. Urmează ghidul rapid de mai jos.</p>
+
+                 <!-- Ghid de creare in 3 pasi -->
+                <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Pasul 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">1</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Crearea proiectului</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">În ChatGPT, apasă pe <strong class="font-semibold text-slate-700">New Project</strong> în bara laterală, numește proiectul (ex: Bronchostop), apoi apasă <strong class="font-semibold text-slate-700">Create</strong>.</p>
+                    </div>
+                    <!-- Pasul 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">2</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Adăugarea instrucțiunilor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Apasă pe cele 3 puncte (dreapta-sus) și alege <strong class="font-semibold text-slate-700">Add Instructions</strong>. Lipește textul copiat de mai jos și apasă <strong class="font-semibold text-slate-700">Save</strong>.</p>
+                    </div>
+                    <!-- Pasul 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">3</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Încărcarea fișierelor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">(Recomandat) Apasă pe <strong class="font-semibold text-slate-700">Add Files</strong> pentru a încărca materiale relevante (prezentări, broșuri) pentru un context complet.</p>
+                    </div>
+                </div>
+
+                 <div id="ai-instructions-accordion" class="space-y-4 max-w-5xl mx-auto">
+                    <!-- Acordeon AI generat de JavaScript -->
+                 </div>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-20 text-slate-500">
+            <div class="mb-10">
+                <h3 class="text-xl font-bold text-slate-700 mb-6">Responsabili brand</h3>
+                <div id="responsabili-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto justify-center">
+                    <!-- Responsabili generati de JS -->
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2025 Brand Hub Dashboard. Property of MagnaPharm Marketing & Sales Romania</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- DATE INJECTATE ---
+        
+        const brandData = {
+            "name": "BRONCHOSTOP",
+            "essence": "BRONCHOSTOP oferă soluții naturale și eficiente pentru problemele respiratorii, bazate pe extracte din plante medicinale cu utilizare tradițională, pentru a ameliora tusea și iritația gâtului la întreaga familie. Brandul promite siguranță și eficacitate prin puterea naturii, validată prin utilizarea îndelungată tradițională.",
+            "objective": "Consolidarea brandului Bronchostop ca <b>un jucător cheie</b> pe piața produselor pentru tuse. Vizăm o <b>creștere accelerată a cotei de piață</b> și atingerea unui <b>volum de vânzări record</b>, pentru a transforma Bronchostop într-una dintre soluțiile preferate de consumatorii care caută remedii naturale și eficiente.",
+            "voice": "Încrezător, Îngrijitor, Profesional, Natural, Accesibil"
+        };
+
+        const productsData = [
+            {
+                "name": "BRONCHOSTOP SIROP 120ML / 200ML",
+                "description_short": "Medicament din plante medicinale pentru tuse mixtă (productivă și uscată) asociată unei răceli.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "OTC (Over-The-Counter)",
+                        "Obiectiv produs": "Depășirea SO din anul 2024 prin atingerea unui număr total de unități vândute către consumator de 131.600 buc",
+                        "Arie terapeutică": "Afecțiuni respiratorii - tuse mixtă asociată unei gripe sau răceli (productivă și uscată)",
+                        "Descriere": "Bronchostop sirop este un medicament din plante medicinale cu utilizare tradițională utilizat pentru a ameliora iritația gâtului și tusea uscată asociată și pentru a favoriza expectorația mucusului persistent, vâscos în caz de tuse asociată cu răceala."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Sirop vâscos, brun-roșcat, cu miros și gust de cimbru și zmeură. Conține extract uscat din iarbă de cimbru și extract lichid din rădăcină de nalbă mare. Disponibil la 120ml și 200ml cu măsură dozatoare.",
+                        "Avantaje competitive": "Formulă naturală bazată pe plante cu utilizare tradițională. Combinație optimizată de cimbru (antiseptic, expectorant) și nalbă mare (emoliantă, calmantă). Gust plăcut de zmeură. Dozare precisă.",
+                        "Beneficii principale": "Favorează expectorația mucusului persistent. Ameliorează rapid iritația gâtului și tusea uscată. Potrivit pentru întreaga familie (adulți, adolescenți și copii peste 2 ani).",
+                        "USP / Diferențiatori cheie": "'CÂND TUSEA APARE, BRONCHOSTOP ADUCE ALINARE'. Combinație optimă pentru tuse mixtă. Gust plăcut și natural de zmeură. Măsură dozatoare inclusă.",
+                        "Reasons to believe": "Utilizare tradițională îndelungată a plantelor. Extracte standardizate. Autorizație de punere pe piață validă. Producător de încredere Kwizda Pharma GmbH, numărul 1 în Austria."
+                    },
+                    "Audiență și piață": {
+                        "Vârsta de administrare": "De la 2 ani (copiii 2-3 ani doar la recomandarea medicului). Copii 4-11 ani: 7,5ml la 3-4 ore. Adulți și adolescenți >12 ani: 15ml la 3-4 ore.",
+                        "Profil public țintă principal": "Părinți responsabili cu copii de 4-12 ani care preferă soluții naturale pentru tusea asociată răcelii și gripei.",
+                        "Demografie": "Femei și bărbați, 30-64 de ani, părinți cu copii 2-12 ani, nivel socio-economic mediu/ridicat, locație urbană/semi-urbană.",
+                        "Nevoie / Problemă cheie (Pain Point)": "Adult sau copil care tușește frecvent, perturbând somnul familiei. Părintele caută o soluție sigură, eficientă și non-agresivă.",
+                        "Segmente de public secundare": "Adulți fără copii care preferă remediile naturale; persoane cu afecțiuni respiratorii recurente.",
+                        "Sezonalitate": "Vârf de vânzări în perioada octombrie-martie. Creștere în septembrie.",
+                        "Competitori principali": "ACC, CALMOTUSIN, TUSSOCALM, PROSPAN, MELTUS, GRINTUS"
+                    }
+                }
+            },
+            {
+                "name": "BRONCHOSTOP DUO GUMĂ ORALĂ",
+                "description_short": "Medicament din plante medicinale, format portabil pentru tuse mixtă, ideal pentru persoanele active.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "OTC (Over-The-Counter)",
+                        "Obiectiv produs": "Depășirea SO din anul 2024 prin atingerea unui număr total de unități vândute către consumator de 83.400 buc",
+                        "Arie terapeutică": "Afecțiuni respiratorii - tuse mixtă asociată unei gripe sau răceli (productivă și uscată)",
+                        "Descriere": "Bronchostop Duo este un medicament din plante medicinale cu utilizare tradițională utilizat pentru calmarea iritației faringiene și a tusei seci asociate și pentru a favoriza expectorația mucusului vâscos în tusea asociată cu răceala."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Gume orale rotunde, brune, cu gust de fructe (aronia și fructe de pădure). Conțin extract uscat din frunză de cimbru și rădăcină de nalbă mare. Administrare prin supt.",
+                        "Avantaje competitive": "Format portabil și discret. Nu necesită apă. Acțiune locală directă în faringe. Eliberare lentă a substanțelor active. Alternativă convenabilă la sirop.",
+                        "Beneficii principale": "Ameliorează iritația gâtului prin acțiune locală directă. Favorează expectorația. Oferă comoditate și mobilitate, putând fi administrat oriunde, oricând.",
+                        "USP / Diferențiatori cheie": "'CÂND TUSEA APARE, BRONCHOSTOP ADUCE ALINARE'. Format ultra-portabil pentru lifestyle activ. Acțiune locală prelungită. Nu necesită apă.",
+                        "Reasons to believe": "Aceeași formulă validată de cimbru și nalbă mare ca în sirop. Acțiune locală directă prin contact prelungit cu mucoasa. Producător de încredere Kwizda Pharma GmbH."
+                    },
+                    "Audiență și piață": {
+                        "Vârsta de administrare": "De la 6 ani. Copii 6-11 ani: 1 gumă la 3-4 ore (max 6/zi). Adulți și adolescenți >12 ani: 2 gume la 3-4 ore (max 12/zi).",
+                        "Profil public țintă principal": "Adulți activi (25-45 ani) cu lifestyle dinamic, care au nevoie de soluții practice pentru ameliorarea tusei.",
+                        "Demografie": "Adulți 25-55 de ani, profesioniști cu program încărcat, părinți activi, nivel socio-economic mediu/ridicat, locație urbană.",
+                        "Nevoie / Problemă cheie (Pain Point)": "Persoană care dezvoltă tuse la birou sau în deplasări și are nevoie de o soluție discretă și eficientă care să nu îi afecteze performanța.",
+                        "Segmente de public secundare": "Părinți cu copii școlari (6+ ani), persoane care călătoresc frecvent, vorbitori profesioniști.",
+                        "Sezonalitate": "Vârf în octombrie-martie, dar cu cerere constantă datorită portabilității.",
+                        "Competitori principali": "ACC, CALMOTUSIN, TUSSOCALM, PROSPAN, MELTUS, GRINTUS"
+                    }
+                }
+            },
+            {
+                "name": "BRONCHOSTOP TRIO PENTRU TUSE ȘI RĂCEALĂ, SOLUȚIE ORALĂ",
+                "description_short": "Medicament din plante medicinale pentru tuse uscată (în special nocturnă), gât iritant și febră ușoară.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "OTC (Over-The-Counter)",
+                        "Obiectiv produs": "Poziționare mai corectă ca un sirop pentru tusea uscată dar mai ales pentru tusea nocturnă",
+                        "Arie terapeutică": "Afecțiuni respiratorii - tuse uscată, gât iritant și reduce febra",
+                        "Descriere": "Medicament din plante medicinale cu utilizare tradițională care se administrează pentru ameliorarea tusei uscate, precum și a tusei din timpul nopții, a iritației faringiene și pentru a favoriza transpirația în timpul febrei (ușoare), când acestea sunt primele simptome ale unei răceli obișnuite."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Soluție orală opacă, brună, cu aromă de căpșuni. Conține extracte uscate din rădăcină de nalbă mare, floare de tei și frunză de pătlagină.",
+                        "Avantaje competitive": "Formulă triplă completă pentru răceală. Combină acțiunea calmantă (nalbă mare), expectorantă (pătlagină) și diaforetică (tei). Abordare holistică a simptomelor. Gust plăcut de căpșuni.",
+                        "Beneficii principale": "Ameliorează tusea uscată și nocturnă pentru un somn liniștit. Calmează iritația faringiană. Ajută la reducerea febrei ușoare în timpul răcelii.",
+                        "USP / Diferențiatori cheie": "'ALINARE PE TIMP DE NOAPTE, PENTRU TUSEA CARE NU DOARME'. Abordare 360° (tuse + iritație + febră). Formulă sinergică cu trei extracte naturale. Aromă de căpșuni.",
+                        "Reasons to believe": "Combinație de trei plante cu utilizare tradițională validată (Nalbă mare, Tei, Pătlagină). Formulă dezvoltată specific pentru tusea uscată/seacă/reziduală. Producător de încredere Kwizda Pharma GmbH."
+                    },
+                    "Audiență și piață": {
+                        "Vârsta de administrare": "De la 4 ani. Durată limitată: 3 zile la copii, 5 zile la adulți.",
+                        "Profil public țintă principal": "Părinți și adulți care se confruntă cu episoade complete de răceală și caută o soluție naturală comprehensivă pentru multiple simptome.",
+                        "Demografie": "Adulți 30-64 ani, părinți cu copii 4-12 ani, persoane cu episoade puternice de tuse uscată/seacă/reziduală, nivel socio-economic mediu/ridicat.",
+                        "Nevoie / Problemă cheie (Pain Point)": "Persoană copleșită de necesitatea de a administra multiple medicamente pentru simptome diferite, căutând o soluție unică și naturală.",
+                        "Segmente de public secundare": "Persoane cu imunitate scăzută, adulți și copii care dezvoltă tuse uscată/seacă/reziduală post-răceală.",
+                        "Sezonalitate": "Vârf major în noiembrie-februarie, când răcelile sunt complete și severe. Creștere în septembrie-octombrie.",
+                        "Competitori principali": "Stodal, Paxeladine, Herbion, Theratuss, Bronhoklir"
+                    },
+                     "Informații legale": {
+                        "Mențiuni obligatorii": "Necesită disclaimer și viză ANM pentru toate produsele.",
+                        "Disclaimer standard": "Acest medicament se poate elibera fără prescripție medicală. Se recomandă citirea cu atenție a prospectului sau a informațiilor de pe ambalaj. Dacă apar manifestări neplăcute, adresați-vă medicului sau farmacistului. Medicamentele expirate și/sau neutilizate se consideră deșeuri periculoase. Viza de publicitate nr. XXXX/ZZ.LL.AAAA"
+                     }
+                }
+            }
+        ];
+        
+        const instructionsText = `# INSTRUCȚIUNI DE SISTEM — BRONCHOSTOP
+
+## 1. ROL
+Ești Asistentul pentru brandul **BRONCHOSTOP**. Scop: să asisti echipa de marketing în generarea de conținut, strategii și suport operațional pentru gama de medicamente naturale BRONCHOSTOP pentru problemele respiratorii.
+
+## 2. REFERINȚE LA INFORMAȚII
+**IMPORTANT:** Toate informațiile detaliate despre brand, cele 3 produse din gamă, audiențele țintă, beneficii, USP-uri, competitori și alte date specifice se găsesc în fișierul \`informatii_bronchostop.txt\`. 
+
+Consultă întotdeauna acest fișier pentru:
+- Descrierile exacte ale celor 3 produse:
+  - **Bronchostop Sirop** (120ml/200ml) - tuse mixtă, de la 2 ani
+  - **Bronchostop Duo Gumă Orală** - format portabil, de la 6 ani  
+  - **Bronchostop Trio Soluție Orală** - răceală completă, de la 4 ani
+- Profilurile audiențelor țintă diferite pentru fiecare produs
+- Beneficiile și caracteristicile specifice fiecărui produs
+- USP-urile și diferențiatorii cheie
+- Informațiile despre competitori
+- Sezonalitatea fiecărui produs
+- Disclaimer-urile legale și vizele ANM
+
+## 3. PRINCIPII DE COMUNICARE / TON
+- **Ton:** încrezător, îngrijitor, profesional, natural, accesibil
+- **Abordare:** Expertiza în remedii naturale tradiționale
+- **Limbaj:** profesional medical dar accesibil, subliniază natura tradițională
+- **Focus:** siguranță prin natura tradițională și eficacitate dovedită
+- **Obiectiv:** atingerea unui Market Share de 2.3% pe piața totală de tuse (269.000 unități vândute)
+
+## 4. SPECIFICITĂȚI COMUNICARE BRONCHOSTOP
+
+### Aspecte cheie de subliniat:
+- **Medicamente din plante medicinale** (nu suplimente alimentare)
+- **Utilizare tradițională îndelungată** (validare istorică)
+- **Producător de prestigiu:** Kwizda Pharma GmbH nr. 1 în Austria
+- **Gamă completă:** soluții pentru diferite nevoi și stiluri de viață
+- **OTC:** fără prescripție medicală, dar cu siguranță medicală
+
+### Mesaje comune pentru toate produsele:
+- **"CÂND TUSEA APARE, BRONCHOSTOP ADUCE ALINARE"**
+- Formulă naturală din plante medicinale
+- Utilizare tradițională validată
+- Siguranță pentru întreaga familie
+- Producător european de încredere
+
+## 5. INSTRUCȚIUNI PENTRU RĂSPUNSURI
+
+### Pentru comunicare generală brand:
+- Subliniază gama completă de 3 produse pentru nevoi diferite
+- Evidențiază expertiza în plante medicinale tradiționale
+- Menționează producătorul de prestigiu european
+
+### Pentru conținut social media:
+- **Identifică produsul relevant** pentru situația descrisă
+- **Oferă 2 variante de copy:**
+  - **Scurtă:** ≤ 60 caractere (focus pe beneficiul imediat)
+  - **Lungă:** ≤ 150 caractere (include context + soluție)
+- **Include CTA relevant** pentru produsul specific
+- **3 hashtag-uri relevante:** #tuse #naturale #traditionale #familie #alinare
+
+### Pentru materiale educative/medicale:
+Structurează ca:
+- **Tipul de tuse/problemă** (mixtă, seacă, nocturnă)
+- **Produsul potrivit** din gamă
+- **Explicația ingredientelor** (plante medicinale și proprietăți)
+- **Modul de administrare** (specific fiecărui produs)
+- **Siguranța și vârsta** (restricții specifice)
+- **Încurajarea consultării medicale** (când este necesar)
+
+### Pentru profesioniștii medicali:
+- Focus pe compoziția din plante medicinale
+- Proprietățile farmacologice tradiționale
+- Autorizațiile de punere pe piață
+- Diferențierea față de competitori
+- Date despre producător
+
+## 6. DIFERENȚIEREA PRODUSELOR ÎN COMUNICARE
+
+### Bronchostop Sirop (2+ ani):
+- **Audiența:** Părinți cu copii 2-12 ani
+- **Focus:** Tuse mixtă, siguranță pentru cei mici
+- **Mesaje:** "Pentru întreaga familie", "De la 2 ani"
+- **USP:** Gust plăcut de zmeură, măsură dozatoare inclusă
+
+### Bronchostop Duo Gumă (6+ ani):
+- **Audiența:** Adulți activi 25-55 ani
+- **Focus:** Portabilitate, discreție, lifestyle dinamic
+- **Mesaje:** "Oriunde, oricând", "Fără apă necesară"
+- **USP:** Ultra-portabil, acțiune locală prelungită
+
+### Bronchostop Trio Soluție (4+ ani):
+- **Audiența:** Părinți și adulți cu răceli complete
+- **Focus:** Tuse nocturnă, febră, abordare 360°
+- **Mesaje:** "Pentru tusea care nu doarme", "Soluție completă"
+- **USP:** Trei plante într-o formulă, aromă căpșuni
+
+## 7. CONSTRÂNGERI DE COMUNICARE / LEGAL
+- **OBLIGATORIU:** Include disclaimer-ul ANM cu viza de publicitate
+- **IMPORTANT:** Sunt medicamente OTC, nu suplimente - respectă această diferență
+- **VÂRSTĂ:** Respectă strict limitările de vârstă pentru fiecare produs
+- **DURATĂ:** Menționează limitările de durată (mai ales pentru Trio)
+- **MEDICUL:** Încurajează consultarea medicului când este cazul
+
+## 8. GRUPURI ȚINTĂ SPECIFICE PENTRU FIECARE PRODUS
+
+### Pentru Sirop - Părinți cu copii mici:
+- **Ton:** Îngrijitor și protector
+- **Focus:** Siguranța copilului, gust acceptat
+- **Mesaje:** Tradițional și sigur, pentru întreaga familie
+
+### Pentru Gumă - Adulți activi:
+- **Ton:** Practic și eficient  
+- **Focus:** Comoditate și mobilitate
+- **Mesaje:** Nu întrerupe rutina, soluție discretă
+
+### Pentru Trio - Răceli severe:
+- **Ton:** Comprehensiv și reconfortant
+- **Focus:** Somn liniștit, soluție completă
+- **Mesaje:** O singură soluție pentru multiple simptome
+
+## 9. DIFERENȚIATORI OBLIGATORII DE COMUNICAT
+
+### Față de competitori sintetici:
+- 100% ingrediente naturale din plante medicinale
+- Utilizare tradițională validată istoric
+- Fără substanțe chimice de sinteză
+
+### Față de competitorii naturali:
+- Producător european de prestigiu nr. 1 în Austria
+- Gamă completă pentru toate nevoile și vârstele
+- Formulă optimizată și concentrată
+
+## 10. WORKFLOW RECOMANDAT
+1. **Identifică** nevoia specifică (tip tuse, vârstă, context)
+2. **Selectează** produsul potrivit din gamă
+3. **Consultă** \`informatii_bronchostop.txt\` pentru detalii
+4. **Adaptează** tonul la audiența produsului specific
+5. **Subliniază** diferențiatorii relevanți
+6. **Include** informațiile legale necesare (viza ANM)
+7. **Încurajează** consultarea medicului când este cazul
+
+## 11. SEZONALITATE ȘI TIMING
+- **Oct-Mar:** Vârf pentru toate produsele (sezon rece)
+- **Sept:** Creștere (back-to-school, back-to-work)
+- **Sirop:** Pattern sezonier accentuat
+- **Gumă:** Cerere mai constantă datorită lifestyle-ului activ
+- **Trio:** Concentrat pe episoade severe de răceală
+
+## 12. EXEMPLE DE MESAJE DIFERENȚIATE
+
+### Sirop:
+"Când tusea copilului vă îngrijorează, alegeți încrederea în natura tradițională"
+
+### Gumă:
+"Tusea nu așteaptă momentul potrivit. Nici tu nu trebuie să o faci"  
+
+### Trio:
+"Când răceala vine cu tot cortegiul: tuse, gât iritant, febră - Bronchostop Trio îți oferă alinarea de care ai nevoie"
+
+## 13. NOTA FINALĂ
+Consultă întotdeauna fișierul \`informatii_bronchostop.txt\` pentru informații complete și actualizate înainte de a genera orice conținut pentru brandul BRONCHOSTOP. Diferențiază clar între cele 3 produse și adaptează comunicarea la audiența specifică fiecăruia, respectând întotdeauna cerințele legale pentru medicamentele OTC.`;
+        
+        const responsabili = [
+            { name: 'Alexandra Oiță', role: 'Marketing Manager', emoji: '⚙️' },
+            { name: 'Alexandru Derdene', role: 'Brand Manager', emoji: '📈' },
+            { name: 'Claudiu Ciobanu', role: 'Digital Marketing', emoji: '🤖' }
+        ];
+
+        // --- FUNCTII DE RENDERIZARE ---
+
+        function createInfoCard(title, content, iconSvg) {
+            return `
+                <div class="brand-card bg-white p-6 rounded-xl shadow-lg fade-in-up">
+                    <div class="flex items-center mb-3">
+                        ${iconSvg}
+                        <h3 class="text-lg font-bold text-slate-800 ml-3">${title}</h3>
+                    </div>
+                    <p class="text-slate-600 text-base">${content || 'N/A'}</p>
+                </div>
+            `;
+        }
+        
+        function createDetailSection(title, details) {
+            let itemsHtml = '';
+            for (const [key, value] of Object.entries(details)) {
+                itemsHtml += `
+                    <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-semibold text-slate-600">${key.replace(/_/g, ' ').charAt(0).toUpperCase() + key.replace(/_/g, ' ').slice(1)}</dt>
+                        <dd class="mt-1 text-sm text-slate-700 sm:mt-0 sm:col-span-2">${value || 'N/A'}</dd>
+                    </div>
+                `;
+            }
+            return `
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-brand mb-2">${title}</h4>
+                    <dl class="divide-y divide-slate-200">${itemsHtml}</dl>
+                </div>
+            `;
+        }
+        
+        function renderResponsabili() {
+            const container = document.getElementById('responsabili-container');
+            let html = '';
+            responsabili.forEach(r => {
+                html += `
+                 <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">${r.emoji}</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">${r.name}</p>
+                            <p class="text-sm text-slate-500 text-left">${r.role}</p>
+                        </div>
+                    </div>
+                `
+            });
+            container.innerHTML = html;
+        }
+
+        function renderBrandInfo() {
+            const container = document.getElementById('brand-info');
+            const icons = {
+                essence: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+                objective: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+                voice: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>`
+            };
+            let html = createInfoCard('Esența brandului', brandData.essence, icons.essence);
+            html += createInfoCard('Obiectivul principal', brandData.objective, icons.objective);
+            html += createInfoCard('Vocea brandului', brandData.voice, icons.voice);
+            container.innerHTML = html;
+        }
+
+        function renderProductsAccordion() {
+            const container = document.getElementById('products-accordion');
+            let html = '';
+            productsData.forEach(product => {
+                let detailsHtml = '';
+                for (const [sectionTitle, sectionDetails] of Object.entries(product.details)) {
+                    detailsHtml += createDetailSection(sectionTitle, sectionDetails);
+                }
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-lg fade-in-up">
+                        <h2>
+                            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-bold text-slate-800">${product.name}</span>
+                                    <span class="text-sm font-normal text-slate-500 mt-1 pr-4">${product.description_short}</span>
+                                </div>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 icon-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content">
+                            <div class="border-t border-slate-200 p-6">
+                               ${detailsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+        
+        function renderAiInstructions() {
+            const container = document.getElementById('ai-instructions-accordion');
+            const accordionTitle = `# INSTRUCȚIUNI DE SISTEM - ${brandData.name.toUpperCase()}`;
+
+            container.innerHTML = `
+                <div class="bg-slate-800 rounded-xl shadow-lg fade-in-up">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                            <span class="text-lg font-bold text-slate-200 font-mono tracking-tight">${accordionTitle}</span>
+                            <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content">
+                        <div class="border-t border-slate-700 p-4 relative ai-instructions-container">
+                             <button id="copy-ai-btn" class="absolute top-6 right-6 bg-brand hover:bg-brand-dark text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 z-10">
+                                Copiază
+                            </button>
+                            <pre id="ai-instructions-text" class="text-slate-200 pr-28">${instructionsText}</pre>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function setupButtonListeners() {
+            // Acordeon
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.parentElement.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    
+                    button.classList.toggle('active');
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.padding = "0";
+                    } else {
+                        content.style.maxHeight = null;
+                        content.style.padding = "0 1.5rem";
+                    }
+                });
+            });
+
+            // Buton copiere (listener-ul se ataseaza dupa randare)
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('brand-name-header').textContent = brandData.name;
+            renderBrandInfo();
+            renderProductsAccordion();
+            renderAiInstructions();
+            renderResponsabili();
+            
+            setupButtonListeners();
+            
+            const copyBtn = document.getElementById('copy-ai-btn');
+            if(copyBtn) {
+                 copyBtn.addEventListener('click', () => {
+                    const copyText = document.getElementById('ai-instructions-text').textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = copyText;
+                    
+                    textArea.style.position = "fixed";
+                    textArea.style.top = 0;
+                    textArea.style.left = 0;
+                    textArea.style.width = "2em";
+                    textArea.style.height = "2em";
+                    textArea.style.padding = 0;
+                    textArea.style.border = "none";
+                    textArea.style.outline = "none";
+                    textArea.style.boxShadow = "none";
+                    textArea.style.background = "transparent";
+                    
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        const successful = document.execCommand('copy');
+                        if(successful) {
+                            copyBtn.textContent = 'Copiat!';
+                            copyBtn.classList.remove('bg-brand');
+                            copyBtn.classList.add('bg-green-500');
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copiază';
+                                copyBtn.classList.remove('bg-green-500');
+                                copyBtn.classList.add('bg-brand');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Nu s-a putut copia textul', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                });
+            }
+
+            // Stagger animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.style.animationDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
+</body>
+</html>

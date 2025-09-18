@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Hub MagnaPharm - Upsavit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .brand-card, .accordion-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .ai-instructions-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Culoarea brandului este injectata aici */
+        :root {
+            --brand-color: #ec4800;
+        }
+        .text-brand { color: var(--brand-color); }
+        .bg-brand { background-color: var(--brand-color); }
+        .hover\:bg-brand-dark:hover { 
+            filter: brightness(0.9);
+        }
+        .icon-brand { color: var(--brand-color); }
+
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Antet Hero -->
+        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight"><a href="https://brands.clxdigital.ro/" class="text-white hover:text-slate-200 transition-colors duration-300">Brand Hub MagnaPharm</a></h1>
+            <p id="brand-name-header" class="text-brand text-xl md:text-4xl font-semibold mt-2">Upsavit</p>
+            <div id="header-links" class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="https://magnapharmholdings-my.sharepoint.com/:x:/g/personal/claudiu_ciobanu_magnapharm_eu/ERmYrrTfy09Nral2Pf2AE34B_mamzb8pwkodOgJrXDxqCg?e=rCkMgI&nav=MTVfe0VFRUY4MUU5LUUyOUMtNDMxMy1BRjVELTJCMkNBMDU0MjlENX0" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Planificare campanii 📆
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EvYjO4LTfJ1LtB53tXQlVMwBCgGh2Xxq0pa1l0wx7ln47Q?e=brQY2a" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Imagini produse 🖼️
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EmdwaoySTKNKnR_y6bxEACQBD4htXG0Wze9vTKRlcPQKnA?e=0ibzbo" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Logo 🎨
+                </a>
+                 <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Calendare SoMe 🗓️
+                </a>
+                 <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Focus SoMe 🎯
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sectiune Informatii Generale Brand -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Sumar strategic</h2>
+                <div id="brand-info" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Continut generat de JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sectiune Produse - Acordeon -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Portofoliu de produse</h2>
+                <div id="products-accordion" class="space-y-4">
+                    <!-- Acordeoane generate de JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sectiune Instructiuni AI -->
+            <div>
+                 <h2 class="text-3xl font-bold text-slate-800 mb-4 text-center">Asistent AI personalizat 🤖</h2>
+                 <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto">Folosește instrucțiunile de mai jos pentru a crea un asistent AI personalizat în ChatGPT, gata să te ajute cu sarcinile de marketing pentru brand. Urmează ghidul rapid de mai jos.</p>
+
+                 <!-- Ghid de creare in 3 pasi -->
+                <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Pasul 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">1</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Crearea proiectului</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">În ChatGPT, apasă pe <strong class="font-semibold text-slate-700">New Project</strong> în bara laterală, numește proiectul (ex: Upsavit), apoi apasă <strong class="font-semibold text-slate-700">Create</strong>.</p>
+                    </div>
+                    <!-- Pasul 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">2</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Adăugarea instrucțiunilor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Apasă pe cele 3 puncte (dreapta-sus) și alege <strong class="font-semibold text-slate-700">Add Instructions</strong>. Lipește textul copiat de mai jos și apasă <strong class="font-semibold text-slate-700">Save</strong>.</p>
+                    </div>
+                    <!-- Pasul 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">3</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Încărcarea fișierelor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">(Recomandat) Apasă pe <strong class="font-semibold text-slate-700">Add Files</strong> pentru a încărca materiale relevante (prezentări, broșuri) pentru un context complet.</p>
+                    </div>
+                </div>
+
+                 <div id="ai-instructions-accordion" class="space-y-4 max-w-5xl mx-auto">
+                    <!-- Acordeon AI generat de JavaScript -->
+                 </div>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-20 text-slate-500">
+            <div class="mb-10">
+                <h3 class="text-xl font-bold text-slate-700 mb-6">Responsabili brand</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">⚙️</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Alexandra Oiță</p>
+                            <p class="text-sm text-slate-500 text-left">Marketing Manager</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">📈</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Ana Anastasiei</p>
+                            <p class="text-sm text-slate-500 text-left">Brand Manager (Jr.)</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">🤖</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Claudiu Ciobanu</p>
+                            <p class="text-sm text-slate-500 text-left">Digital Marketing</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">📢</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Line Agency</p>
+                            <p class="text-sm text-slate-500 text-left">Social Media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2025 Brand Hub Dashboard. Property of MagnaPharm Marketing & Sales Romania</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- DATE INJECTATE ---
+        
+        const brandData = {
+            "name": "UPSAVIT",
+            "essence": "UPSAVIT este aliatul tău în perioade dificile de oboseală și lipsă de energie, oferind soluții convenabile și eficiente de vitamina C care susțin imunitatea naturală și vitalitatea zilnică. Brandul promite accesibilitate, calitate și flexibilitate în administrare pentru o viață mai energică.",
+            "objective": "Poziționarea gamei Upsavit ca un <b>reper pe piața de Vitamina C</b>, prin capitalizarea pe formatele sale inovatoare și convenabile. Ne propunem o <b>creștere semnificativă a cotei de piață</b> pentru a transforma Upsavit într-o marcă de referință pentru consumatorii moderni.",
+
+            "voice": "Vibrant, Prietenos, Credibil, Empatic, Energic"
+        };
+
+        const productsData = [
+            {
+                "name": "UPSAVIT DIRECT VITAMINA C 1000MG - PLICURI ORODISPERSABILE",
+                "description_short": "Format on-the-go, care se dizolvă direct în gură. Se poate lua oriunde, oricând. FĂRĂ ZAHĂR.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Obiectiv produs": "Atingerea unui Market Share de 2% raportat la piața totală de Vitamina C",
+                        "Arie terapeutică": "Vitalitate și susținerea imunității naturale",
+                        "Descriere": "Există anumite perioade mai dificile decât altele, în care oboseala și lipsa de energie pot afecta viața de zi cu zi și diferitele activități. În aceste momente, suplimentul alimentar UPSAVIT DIRECT VITAMINA C 1000mg plicuri orodispersabile este aliatul tău, datorită vitaminei C care contribuie la un metabolism energetic normal, reduce oboseala și este, de asemenea, recunoscută pentru contribuția sa la funcționarea normală a sistemului imunitar."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Supliment alimentar cu vitamina C 1000mg în plicuri orodispersabile. Format on-the-go care se dizolvă direct în gură fără apă. Aromă de portocală. Fără zahăr, cu îndulcitor (sucraloză). 20 plicuri per cutie. Administrare de preferință după masa de dimineață.",
+                        "Avantaje competitive": "Formulă orodispersabilă care nu necesită apă pentru administrare. Convenabilitate maximă pentru stilul de viață activ și călătorii. Aromă naturală de portocale pentru o experiență plăcută. Format individual dozat care previne supradozarea. Fără zahăr pentru persoanele atente la aportul glucidic.",
+                        "Beneficii principale": "Susține metabolismul energetic normal și reduce oboseala. Contribuie la funcționarea normală a sistemului imunitar. Oferă flexibilitate completă de administrare oriunde și oricând.",
+                        "Reasons to believe": "Doza optimă de 1000mg vitamina C validată științific pentru susținerea imunității. Producător UPSA cu peste 85 de ani de experiență în domeniul farmaceutic. Fabricat în Franța conform normelor stricte de calitate și control.",
+                        "USP / Diferențiatori cheie": "Format orodispersabil de vitamina C 1000mg care se administrează fără apă. Convenabilitatea unică pentru persoanele active și călătorii frecvente. Experiența gustativă plăcută cu aromă de portocale."
+                    },
+                     "Audiență și piață": {
+                        "Vârsta de administrare": "Produs rezervat exclusiv adulților (18+ ani).",
+                        "Profil public țintă principal": "Adulți activi cu vârste între 25-45 de ani, cu un stil de viață dinamic și multe deplasări, care valorează convenabilitatea și flexibilitatea în administrarea suplimentelor. Persoane care simt frecvent oboseala și caută soluții practice pentru susținerea energiei și imunității fără a fi nevoie să planifice administrarea în jurul meselor sau accesului la apă.",
+                        "Demografie": "Vârstă: 25-55 ani. Gen: Ambele genuri cu ușoară prevalență feminin. Locație: Urban și suburban din toată România. Nivel socio-economic: Mediu și mediu-superior. Ocupație: Profesioniști activi, manageri, antreprenori, persoane cu călătorii frecvente.",
+                        "Nevoie / Problemă cheie": "Oboseala cronică și lipsă de energie în perioadele intense de muncă sau stres, combinată cu dificultatea de a administra constant suplimente din cauza programului haotic și a lipsei accesului la apă în anumite momente. Frustrarea de a uita să ia suplimentul pentru că necesită planificare și condiții specifice de administrare.",
+                        "Segmente de public secundare": "Adulți seniori (55+ ani) care apreciază ușurința administrării. Persoane cu dificultăți de înghițire care preferă alternative la comprimate. Profesioniști din domeniul medical care recomandă soluții convenabile pacienților.",
+                        "Sezonalitate": "Vârf de cerere în perioada octombrie-februarie când scade temperatura și crește incidența virozelor respiratorii. Scădere relativă în perioada martie-septembrie. Oportunități secundare în perioada de tranziție aprilie-mai pentru combaterea asteniei de primăvară.",
+                        "Competitori principali": "ROPHARMA, VITAMINA C BIONIKA"
+                    }
+                }
+            },
+            {
+                "name": "UPSAVIT VITAMINA C 1000MG - COMPRIMATE EFERVESCENTE",
+                "description_short": "Se poate administra zilnic și are un gust plăcut de portocală. Raport calitate-preț excelent.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Obiectiv produs": "Atingerea unui Market Share de 3,4% raportat la piața totală de Vitamina C",
+                        "Arie terapeutică": "Vitalitate și susținerea imunității naturale",
+                        "Descriere": "Există anumite perioade mai dificile decât altele, în care oboseala și lipsa de energie pot afecta viața de zi cu zi și diverse activități. În aceste momente, suplimentul alimentar UPSAVIT VITAMINA C 1000 mg comprimate efervescente este aliatul tău, datorită vitaminei C care contribuie la un metabolism energetic normal, reduce oboseala și sprijină funcționarea normală a sistemului imunitar."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Supliment alimentar cu vitamina C 1000mg în comprimate efervescente. Se dizolvă într-un pahar cu apă formând o băutură cu aromă de portocală. Administrare zilnică recomandată dimineața în timpul sau după masă. 2 tuburi cu câte 10 comprimate efervescente (total 20 de comprimate). Conține zahăr și îndulcitor zaharină de sodiu. Colorant galben-portocaliu S.",
+                        "Avantaje competitive": "Absorție rapidă și completă datorită formei efervescente. Experiență de băutură plăcută și revigorantă. Ritual matinal agreabil care încurajează administrarea constantă. Format tradițional și familiar pentru consumatorii români. Raport calitate-preț excelent pentru 20 de administrări.",
+                        "Beneficii principale": "Susține metabolismul energetic normal și reduce oboseala rapidă. Contribuie eficient la funcționarea normală a sistemului imunitar. Oferă o experiență plăcută de băutură care facilitează hidratarea dimineții.",
+                        "Reasons to believe": "Doza optimă de 1000mg vitamina C pentru susținerea imunității zilnice. Forma efervescentă asigură dizolvare completă și absorție superioară față de comprimatele solide. Producător UPSA cu peste 85 de ani de experiență și fabricație în Franța.",
+                        "USP / Diferențiatori cheie": "Experiența completă de băutură revigorantă care combină hidratarea cu vitaminizarea. Absorție optimă datorită formei efervescente care predigera vitamina C. Ritual matinal plăcut care transformă administrarea suplimentului într-un moment de plăcere."
+                    },
+                     "Audiență și piață": {
+                        "Vârsta de administrare": "Produs rezervat exclusiv adulților (18+ ani).",
+                        "Profil public țintă principal": "Adulți cu vârste între 30-55 de ani, cu rutine matinale structurate, care apreciază ritualurile de wellness și caută soluții eficiente pentru susținerea sănătății zilnice. Persoane care preferă experiențe plăcute în administrarea suplimentelor și valorează raportul calitate-preț.",
+                        "Demografie": "Vârstă: 30-55 ani. Gen: Ambele genuri cu ușoară prevalență masculină. Locație: Urban și rural din toată România. Nivel socio-economic: Mediu. Ocupație: Angajați cu program fix, pensionari activi, persoane cu rutine stabile. Status familial: Familii stabilite, cupluri fără copii, persoane care trăiesc singure.",
+                        "Nevoie / Problemă cheie": "Oboseala și scăderea energiei în timpul zilei, mai ales în perioade de stres sau schimbări sezoniere, dublată de dorința de a avea o rutină sănătoasă și plăcută dimineața. Preocuparea pentru imunitate și nevoia de a găsi modalități eficiente și accesibile financiar de a se proteja de răceli și viroze.",
+                        "Segmente de public secundare": "Seniori (60+ ani) care preferă texturi lichide și gusturi familiare. Persoane cu probleme de înghițire care evită comprimatele solide. Familii cu buget limitat. Consumatori tradiționali.",
+                        "Sezonalitate": "Cerere crescută semnificativ în octombrie-martie. Menținerea unui nivel constant de consum în restul anului datorită formatului plăcut și ritualului matinal. Potențial de creștere în aprilie-mai pentru combaterea asteniei de primăvară.",
+                        "Competitori principali": "REDOXON VITAMIN C, SUN HEALTH VITAM.C, VITAMINA C MAX NF"
+                    }
+                }
+            },
+            {
+                "name": "UPSAVIT VITAMINA C ACEROLA COPII - JELEURI MASTICABILE",
+                "description_short": "Formulă pe bază de fructe de acerola, îmbogățite cu vitamina C. Aromă de căpșuni (aromă naturală). Produs Vegan.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Obiectiv produs": "Atingerea unui Market Share de 0,9% raportat la piața totală de Vitamina C",
+                        "Arie terapeutică": "Vitalitate și susținerea imunității naturale pentru copii",
+                        "Descriere": "Zilele unei familii sunt adesea încărcate, cu perioade uneori intense, iar lipsa de energie poate fi resimțită. De aceea, jeleurile masticabile UPSAVIT VITAMINA C ACEROLA COPII sunt formulate pe bază de fructe de acerola, îmbogățite cu vitamina C, care contribuie la reducerea oboselii și la funcționarea normală a sistemului imunitar. Cu forma lor originală, aceste jeleuri cu aromă de căpșuni sunt potrivite pentru cei mici."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Supliment alimentar pe bază de extract de fructe de acerola îmbogățit cu vitamina C. Jeleuri masticabile cu aromă naturală de căpșuni. Formă originală și distractivă. 60 jeleuri per cutie. Potrivit pentru dieta vegană. Coloranți naturali din concentrat de morcov și coacăze negre. Conține zahăr și sirop de glucoză.",
+                        "Avantaje competitive": "Singura formulă cu acerola naturală care combină extractul de fruct cu vitamina C adăugată. Format atractiv pentru copii. Aromă naturală de căpșuni preferată de copii. Ingrediente naturale fără coloranți artificiali. Potrivit pentru vegetarieni și vegani.",
+                        "Beneficii principale": "Reduce oboseala și susține energia copiilor în perioade intense. Contribuie la funcționarea normală a sistemului imunitar al copilului. Facilitează administrarea prin experiența plăcută de jeleu dulce.",
+                        "Reasons to believe": "Acerola este una dintre cele mai bogate surse naturale de vitamina C din natură. Combinația optimă între vitamina C naturală și adăugată pentru eficacitate maximă. Producător UPSA cu experiență în formulări pediatrice sigure. Ingrediente naturale și coloranți din fructe. Formă și gust testate.",
+                        "USP / Diferențiatori cheie": "Formulă pentru copii care combină puterea acerola naturale cu vitamina C adăugată. Format de jeleu masticabil care transformă administrarea într-o experiență plăcută. Ingrediente 100% naturale potrivite pentru alimentația vegană."
+                    },
+                    "Audiență și piață": {
+                        "Vârsta de administrare": "Copii cu vârsta între 4 și 10 ani: 1 jeleu pe zi. Copii peste 10 ani și adulți: 2 jeleuri pe zi.",
+                        "Profil public țintă principal": "Părinți responsabili cu vârste între 28-45 de ani, cu copii între 4-12 ani, care sunt preocupați de sănătatea copiilor lor și caută soluții naturale și sigure pentru susținerea imunității. Mame și tați care se confruntă cu dificultăți în administrarea suplimentelor copiilor.",
+                        "Demografie": "Părinți: 28-50 ani. Gen: Prevalență feminină (mame). Copii țintă: 4-12 ani. Locație: Urban și suburban. Nivel socio-economic: Mediu și mediu-superior. Stil de viață: Familii active, preocupate de alimentația sănătoasă.",
+                        "Nevoie / Problemă cheie": "Îngrijorarea parentală legată de imunitatea slăbită a copilului și infecțiile frecvente, mai ales la intrarea în colectivitate. Frustrarea de a administra suplimente copiilor care refuză comprimatele sau au gusturi dificile.",
+                        "Segmente de public secundare": "Bunici activi. Adulți tineri (18-30 ani) care preferă formatele de jeleu. Persoane vegetariene/vegane. Adulți cu dificultăți de înghițire.",
+                        "Sezonalitate": "Vârf major în august-septembrie (întoarcerea la școală). Cerere ridicată în octombrie-martie. Scădere în iunie-august. Oportunități în aprilie-mai.",
+                        "Competitori principali": "ASCOVIT, REDOXITOS, BERES VITAMINA C, LILI C VITAMINA C"
+                    }
+                }
+            }
+        ];
+        
+        const instructionsText = `# INSTRUCȚIUNI DE SISTEM — UPSAVIT
+
+## 1. ROL
+Ești Asistentul pentru brandul **UPSAVIT**. Scop: să asisti echipa de marketing în generarea de conținut, strategii și suport operațional pentru gama de suplimente UPSAVIT cu vitamina C pentru diferite stiluri de viață și nevoi.
+
+## 2. REFERINȚE LA INFORMAȚII
+**IMPORTANT:** Toate informațiile detaliate despre brand, cele 3 produse din gamă, audiențele țintă, beneficii, USP-uri, competitori și alte date specifice se găsesc în fișierul \`informatii_upsavit.txt\`. 
+
+Consultă întotdeauna acest fișier pentru:
+- Descrierile exacte ale celor 3 produse:
+  - **UPSAVIT DIRECT** (18+) - plicuri orodispersabile, fără apă, pentru persoane active
+  - **UPSAVIT Efervescent** (18+) - comprimate efervescente, ritual matinal, raport calitate-preț
+  - **UPSAVIT Acerola Copii** (4+) - jeleuri masticabile cu acerola naturală, vegan
+- Profilurile audiențelor țintă diferite pentru fiecare produs
+- Beneficiile și caracteristicile specifice fiecărui produs
+- USP-urile și diferențiatorii cheie
+- Informațiile despre competitori
+- Sezonalitatea fiecărui produs
+- Disclaimer-urile legale pentru suplimente alimentare
+
+## 3. PRINCIPII DE COMUNICARE / TON
+- **Ton:** vibrant, prietenos, credibil, empatic, energic
+- **Abordare:** Aliat în perioade dificile de oboseală și lipsă de energie
+- **Limbaj:** accesibil, empatic, focus pe stilul de viață și convenabilitate
+- **Focus:** flexibilitate în administrare și adaptare la nevoi specifice
+- **Obiectiv:** atingerea unui Market Share ambițios de 3,5% pe piața de vitamina C
+
+## 4. SPECIFICITĂȚI COMUNICARE UPSAVIT
+
+### Aspecte cheie de subliniat:
+- **"Aliatul tău în perioade dificile"** - mesajul central empatic
+- **Flexibilitatea în administrare** - 3 formate pentru 3 stiluri de viață diferite
+- **Producător UPSA** - peste 85 de ani de experiență, fabricație în Franța
+- **Convenabilitatea** și **accesibilitatea** ca valori centrale
+- **Soluții adaptate** la ritmul vieții moderne
+
+### Mesaje comune pentru toate produsele:
+- Susține metabolismul energetic și reduce oboseala
+- Contribuie la funcționarea normală a sistemului imunitar
+- Soluții convenabile pentru vitalitate zilnică
+- Calitate franceză de încredere
+
+## 5. INSTRUCȚIUNI PENTRU RĂSPUNSURI
+
+### Pentru alegerea produsului potrivit:
+**ALGORIM DE SELECȚIE:**
+1. **Identifică vârsta:** Copii (4+) sau Adulți (18+)?
+2. **Evaluează stilul de viață:** Activ cu deplasări vs. Rutine stabile?
+3. **Consideră preferințele:** Fără apă vs. Ritual matinal vs. Format pentru copii?
+4. **Evaluează bugetul:** Premium convenience vs. Raport calitate-preț?
+
+### Pentru conținut social media:
+- **Identifică produsul specific** pentru situația descrisă
+- **Oferă 2 variante de copy:**
+  - **Scurtă:** ≤ 60 caractere (focus pe beneficiul imediat)
+  - **Lungă:** ≤ 150 caractere (include context + soluție + diferențiator)
+- **Include CTA relevant** pentru produsul specific
+- **3 hashtag-uri relevante:** #energie #vitaminac #upsavit #imunitate #vibrant
+
+### Pentru materiale educative:
+Structurează ca:
+- **Contextul problemei** (oboseala, lipsa energiei, imunitatea)
+- **Produsul potrivit** din gamă cu justificarea alegerii
+- **Beneficiile vitaminei C** pentru metabolism energetic și imunitate
+- **Convenabilitatea formatului** specific
+- **Calitatea producătorului** UPSA francez
+- **Încurajarea consultării medicale** când este necesar
+
+## 6. DIFERENȚIEREA PRODUSELOR ÎN COMUNICARE
+
+### UPSAVIT DIRECT (18+) - Pentru Persoane Active:
+- **Audiența:** Profesioniști activi 25-45 ani cu multe deplasări
+- **Focus:** Convenabilitate maximă, fără apă, on-the-go
+- **Pain point:** Program haotic, uită să ia suplimente, nu are acces la apă
+- **USP:** Singurul format orodispersabil de vitamina C 1000mg fără apă
+- **Mesaje (sugestii pentru inspirație):** "Pentru energia care nu așteaptă", "Oriunde, oricând, fără apă"
+
+### UPSAVIT Efervescent (18+) - Pentru Ritual Matinal:
+- **Audiența:** Adulți 30-55 ani cu rutine stabile, atenți la buget
+- **Focus:** Experiența plăcută, absorție optimă, raport calitate-preț
+- **Pain point:** Oboseală sezonieră, dorința ritualurilor sănătoase accesibile
+- **USP:** Ritual matinal plăcut cu absorție superioară, 20 doze
+- **Mesaje (sugestii pentru inspirație):** "Dimineața ta energică începe cu UPSAVIT", "Băutura care îți dă aripi"
+
+### UPSAVIT Acerola Copii (4+) - Pentru Familii:
+- **Audiența:** Părinți 28-45 ani cu copii 4-12 ani
+- **Focus:** Natural cu acerola, gust plăcut pentru copii, vegan
+- **Pain point:** Dificultăți administrare suplimente la copii, dorința produselor naturale
+- **USP:** Singura formulă cu acerola naturală în jeleu masticabil pentru copii
+- **Mesaje (sugestii pentru inspirație):** "Natura îi dă energia de care are nevoie", "Jeleul cu superpowerul acerola"
+
+**NOTĂ:** Mesajele de mai sus sunt doar sugestii pentru inspirație și orientare creativă, nu mesaje definitive care trebuie folosite exact așa.
+
+## 7. CONSTRÂNGERI DE COMUNICARE / LEGAL
+- **OBLIGATORIU:** Include disclaimer-ul standard pentru suplimente alimentare
+- **IMPORTANT:** Sunt suplimente alimentare, nu medicamente - respectă această diferență
+- **VÂRSTĂ:** Respectă strict limitările de vârstă (copii 4+, adulți 18+)
+- **DOZARE:** Respectă recomandările de dozaj pentru fiecare produs
+- **NATURAL:** Subliniază aspectele naturale (acerola, arome naturale) unde este cazul
+
+## 8. GRUPURI ȚINTĂ SPECIFICE
+
+### Pentru DIRECT - Profesioniști activi:
+- **Ton:** Dinamic și practic
+- **Focus:** Eficiența și convenabilitatea în mișcare
+- **Context:** Întâlniri, călătorii, program imprevizibil
+
+### Pentru Efervescent - Consumatori tradiționali:
+- **Ton:** Reconfortant și familiar
+- **Focus:** Ritual plăcut și valoare pentru bani
+- **Context:** Dimineața acasă, rutina zilnică
+
+### Pentru Acerola Copii - Părinți îngrijorați:
+- **Ton:** Înțelegător și natural
+- **Focus:** Siguranța copilului și ingrediente naturale
+- **Context:** Grădinița/școala, sezonul rece, imunitatea copilului
+
+## 9. DIFERENȚIATORI OBLIGATORII DE COMUNICAT
+
+### Pentru întreaga gamă:
+- Producător UPSA cu peste 85 de ani experiență
+- Fabricat în Franța - calitate europeană
+- 3 formate pentru 3 stiluri de viață diferite
+
+### Specifici per produs:
+- **DIRECT:** Singurul format orodispersabil fără apă
+- **Efervescent:** Absorție superioară, raport calitate-preț excelent
+- **Acerola Copii:** Acerola naturală, cel mai bogat în vitamina C din natură
+
+### Față de competitori:
+- Flexibilitatea gamei complete pentru toate nevoile
+- Calitatea producătorului francez de prestigiu
+- Adaptarea la stilul de viață modern românesc
+
+## 10. WORKFLOW RECOMANDAT
+1. **Identifică profilul utilizatorului** (vârstă, stil de viață, nevoi)
+2. **Selectează produsul potrivit** din gama celor 3
+3. **Consultă** \`informatii_upsavit.txt\` pentru detalii specifice
+4. **Adaptează** tonul la audiența produsului ales
+5. **Subliniază** diferențiatorii relevanți și convenabilitatea
+6. **Include** mesajul empatic despre "perioade dificile"
+7. **Adaugă** informațiile legale necesare (disclaimer)
+
+## 11. SEZONALITATE ȘI PRIORITIZARE
+
+### Sezonul de vârf (Oct-Mar):
+- **Accent pe imunitate** pentru toate produsele
+- **DIRECT:** Ideal pentru călătoriile de iarnă
+- **Efervescent:** Ritual cald reconfortant
+- **Acerola Copii:** Protecție în colectivități
+
+### Sezonul moderat (Apr-Sept):
+- **Accent pe energie** și vitalitate
+- **DIRECT:** Perfect pentru vacante și activități
+- **Efervescent:** Menținerea obiceiurilor sănătoase
+- **Acerola Copii:** Scădere naturală, focus pe energie pentru joacă
+
+## 12. ASPECTE DE SIGURANȚĂ SPECIFICE
+- **Pentru copii:** Doar sub supravegherea adulților
+- **Dozare:** Respectă strict recomandările per vârstă
+- **Interacțiuni:** Atenție la cumul cu alte surse de vitamina C
+- **Părinți:** Educarea despre beneficiile vs. precauțiile la copii
+
+## 13. EXEMPLE DE ABORDĂRI DIFERENȚIATE
+
+### Pentru DIRECT (sugestii pentru inspirație):
+"În timpul unei prezentări importante sau în avion - UPSAVIT DIRECT îți oferă energia de care ai nevoie, fără apă, fără planificare"
+
+### Pentru Efervescent (sugestii pentru inspirație):
+"Dimineața perfectă începe cu un pahar de UPSAVIT - vitamina C care se transformă în energie pentru întreaga zi"
+
+### Pentru Acerola Copii (sugestii pentru inspirație):
+"Când copilul tău așteaptă cu nerăbdare 'bombonica' cu vitamina C - știi că ai găsit soluția perfectă pentru imunitatea lui"
+
+**REMINDER:** Toate exemplele de mesaje sunt doar sugestii pentru inspirație creativă, nu conținut final de utilizat direct.
+
+## 14. NOTA FINALĂ
+Consultă întotdeauna fișierul \`informatii_upsavit.txt\` pentru informații complete și actualizate înainte de a genera orice conținut pentru brandul UPSAVIT. Fiecare produs servește un stil de viață diferit - asigură-te că recomanzi soluția potrivită pentru nevoia și contextul specific, păstrând tonul empatic și vibrant al brandului, și respectând întotdeauna cerințele legale pentru suplimentele alimentare.`;
+
+        // --- FUNCTII DE RENDERIZARE ---
+
+        function createInfoCard(title, content, iconSvg) {
+            return `
+                <div class="brand-card bg-white p-6 rounded-xl shadow-lg fade-in-up">
+                    <div class="flex items-center mb-3">
+                        ${iconSvg}
+                        <h3 class="text-lg font-bold text-slate-800 ml-3">${title}</h3>
+                    </div>
+                    <p class="text-slate-600 text-base">${content || 'N/A'}</p>
+                </div>
+            `;
+        }
+        
+        function createDetailSection(title, details) {
+            let itemsHtml = '';
+            for (const [key, value] of Object.entries(details)) {
+                itemsHtml += `
+                    <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-semibold text-slate-600">${key.replace(/_/g, ' ').charAt(0).toUpperCase() + key.replace(/_/g, ' ').slice(1)}</dt>
+                        <dd class="mt-1 text-sm text-slate-700 sm:mt-0 sm:col-span-2">${value || 'N/A'}</dd>
+                    </div>
+                `;
+            }
+            return `
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-brand mb-2">${title}</h4>
+                    <dl class="divide-y divide-slate-200">${itemsHtml}</dl>
+                </div>
+            `;
+        }
+
+        function renderBrandInfo() {
+            const container = document.getElementById('brand-info');
+            const icons = {
+                essence: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+                objective: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+                voice: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>`
+            };
+            let html = createInfoCard('Esența brandului', brandData.essence, icons.essence);
+            html += createInfoCard('Obiectivul principal', brandData.objective, icons.objective);
+            html += createInfoCard('Vocea brandului', brandData.voice, icons.voice);
+            container.innerHTML = html;
+        }
+
+        function renderProductsAccordion() {
+            const container = document.getElementById('products-accordion');
+            let html = '';
+            productsData.forEach(product => {
+                let detailsHtml = '';
+                for (const [sectionTitle, sectionDetails] of Object.entries(product.details)) {
+                    detailsHtml += createDetailSection(sectionTitle, sectionDetails);
+                }
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-lg fade-in-up">
+                        <h2>
+                            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-bold text-slate-800">${product.name}</span>
+                                    <span class="text-sm font-normal text-slate-500 mt-1 pr-4">${product.description_short}</span>
+                                </div>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 icon-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content">
+                            <div class="border-t border-slate-200 p-6">
+                               ${detailsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+        
+        function renderAiInstructions() {
+            const container = document.getElementById('ai-instructions-accordion');
+            const accordionTitle = `# INSTRUCȚIUNI DE SISTEM - ${brandData.name.toUpperCase()}`;
+
+            container.innerHTML = `
+                <div class="bg-slate-800 rounded-xl shadow-lg fade-in-up">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                            <span class="text-lg font-bold text-slate-200 font-mono tracking-tight">${accordionTitle}</span>
+                            <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content">
+                        <div class="border-t border-slate-700 p-4 relative ai-instructions-container">
+                             <button id="copy-ai-btn" class="absolute top-6 right-6 bg-brand hover:bg-brand-dark text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 z-10">
+                                Copiază
+                            </button>
+                            <pre id="ai-instructions-text" class="text-slate-200 pr-28">${instructionsText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function setupButtonListeners() {
+            // Acordeon
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.parentElement.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    button.classList.toggle('active');
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.padding = "0";
+                    } else {
+                        content.style.maxHeight = null;
+                        content.style.padding = "0 1.5rem";
+                    }
+                });
+            });
+
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.title = `Brand Hub MagnaPharm - ${brandData.name}`;
+            document.getElementById('brand-name-header').textContent = brandData.name;
+            
+            renderBrandInfo();
+            renderProductsAccordion();
+            renderAiInstructions(); 
+            
+            setupButtonListeners();
+            
+            const copyBtn = document.getElementById('copy-ai-btn');
+            if(copyBtn) {
+                 copyBtn.addEventListener('click', () => {
+                    const copyText = document.getElementById('ai-instructions-text').textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = copyText;
+                    
+                    textArea.style.position = "fixed";
+                    textArea.style.top = 0;
+                    textArea.style.left = 0;
+                    textArea.style.width = "2em";
+                    textArea.style.height = "2em";
+                    textArea.style.padding = 0;
+                    textArea.style.border = "none";
+                    textArea.style.outline = "none";
+                    textArea.style.boxShadow = "none";
+                    textArea.style.background = "transparent";
+                    
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        const successful = document.execCommand('copy');
+                        if(successful) {
+                            copyBtn.textContent = 'Copiat!';
+                            copyBtn.classList.remove('bg-brand', 'hover:bg-brand-dark');
+                            copyBtn.classList.add('bg-green-500');
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copiază';
+                                copyBtn.classList.remove('bg-green-500');
+                                copyBtn.classList.add('bg-brand', 'hover:bg-brand-dark');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Nu s-a putut copia textul', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                });
+            }
+            
+            // Textul din instructiunile AI era encodat gresit, am adaugat o functie de escape.
+            const instructionsPre = document.getElementById('ai-instructions-text');
+            if (instructionsPre) {
+                 instructionsPre.textContent = instructionsText;
+            }
+
+
+            // Stagger animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.style.animationDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
+</body>
+</html>
+

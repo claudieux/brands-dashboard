@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Hub MagnaPharm - Familia Guard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .brand-card, .accordion-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .ai-instructions-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Culoarea brandului este injectata aici */
+        :root {
+            --brand-color: #e17b2a;
+        }
+        .text-brand { color: var(--brand-color); }
+        .bg-brand { background-color: var(--brand-color); }
+        .hover\:bg-brand-dark:hover { background-color: #c46a25; } /* O nuanta mai inchisa pentru hover */
+        .icon-brand { color: var(--brand-color); }
+
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Antet Hero -->
+        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight"><a href="https://brands.clxdigital.ro/" class="text-white hover:text-slate-200 transition-colors duration-300">Brand Hub MagnaPharm</a></h1>
+            <p id="brand-name-header" class="text-brand text-xl md:text-4xl font-semibold mt-2">Familia Guard</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="https://magnapharmholdings-my.sharepoint.com/:x:/g/personal/claudiu_ciobanu_magnapharm_eu/ERmYrrTfy09Nral2Pf2AE34B_mamzb8pwkodOgJrXDxqCg?e=TmLU6F&nav=MTVfezZFOTEzNTQ3LUYzNDgtNEEzQS1BMDVCLUE3RkE0NDk5NUFCM30" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Planificare campanii 📆
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EkkNqb0u94JNmRpQp72DVXUBrFqBG_H_lQy4SFnPo4jbQQ?e=Ku0ySo" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Imagini produse 🖼️
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/Ehb5-R1-AFNLh32isOvsPFYBDAPDEhEDF2n4r-e6wV1jhg?e=e0ia0h" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Logo 🎨
+                </a>
+                 <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Calendare SoMe 🗓️
+                </a>
+                 <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Focus SoMe 🎯
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sectiune Informatii Generale Brand -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Sumar strategic</h2>
+                <div id="brand-info" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Continut generat de JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sectiune Produse - Acordeon -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Portofoliu de produse</h2>
+                <div id="products-accordion" class="space-y-4">
+                    <!-- Acordeoane generate de JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Sectiune Instructiuni AI -->
+            <div>
+                 <h2 class="text-3xl font-bold text-slate-800 mb-4 text-center">Asistent AI personalizat 🤖</h2>
+                 <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto">Folosește instrucțiunile de mai jos pentru a crea un asistent AI personalizat în ChatGPT, gata să te ajute cu sarcinile de marketing pentru brand. Urmează ghidul rapid de mai jos.</p>
+
+                 <!-- Ghid de creare in 3 pasi -->
+                <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Pasul 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">1</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Crearea GPT-ului</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">În ChatGPT (versiunea plătită), apasă pe <strong class="font-semibold text-slate-700">Explore GPTs</strong>, apoi <strong class="font-semibold text-slate-700">Create a GPT</strong>. La secțiunea <strong class="font-semibold text-slate-700">Configure</strong>, dă-i un nume (ex: Asistent Familia Guard).</p>
+                    </div>
+                    <!-- Pasul 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">2</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Adăugarea instrucțiunilor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Copiază textul de mai jos și lipește-l în câmpul <strong class="font-semibold text-slate-700">Instructions</strong>. Apasă <strong class="font-semibold text-slate-700">Save</strong> (și alege "Only me" sau "Anyone with a link").</p>
+                    </div>
+                    <!-- Pasul 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">3</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Încărcarea fișierelor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">(Recomandat) Apasă pe <strong class="font-semibold text-slate-700">Upload Files</strong> pentru a încărca materiale relevante (prezentări, broșuri) pentru un context complet.</p>
+                    </div>
+                </div>
+
+                 <div id="ai-instructions-accordion" class="space-y-4 max-w-5xl mx-auto">
+                    <!-- Acordeon AI generat de JavaScript -->
+                 </div>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-20 text-slate-500">
+            <div class="mb-10">
+                <h3 class="text-xl font-bold text-slate-700 mb-6">Responsabili brand</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">⚙️</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Alexandra Oiță</p>
+                            <p class="text-sm text-slate-500 text-left">Marketing Manager</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">📈</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Ana Anastasiei</p>
+                            <p class="text-sm text-slate-500 text-left">Brand Manager (Jr.)</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">🤖</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Claudiu Ciobanu</p>
+                            <p class="text-sm text-slate-500 text-left">Digital Marketing</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">📢</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">Ramona Stan</p>
+                            <p class="text-sm text-slate-500 text-left">Social Media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2024 Brand Hub Dashboard. Property of MagnaPharm Marketing & Sales Romania</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- DATE INJECTATE ---
+        
+        const brandData = {
+            "name": "FAMILIA GUARD",
+            "essence": "Familia Guard susține sănătatea întregii familii prin suplimente de înaltă calitate pe bază de vitamina D3 și DHA, formulate pentru a răspunde nevoilor de zi cu zi ale copiilor și adulților. Brandul reflectă grija și responsabilitatea părinților care aleg cu atenție produse sigure și eficiente, pentru a sprijini dezvoltarea armonioasă și starea de bine a celor dragi, la fiecare pas.",
+            "objective": "Transformarea brandului Familia Guard într-un <b>jucător important</b> pe piața de Vitamina D3. Ne propunem o <b>creștere accelerată a notorietății</b> și consolidarea sa ca o <b>soluție de încredere</b> pentru părinții care aleg produse de înaltă calitate pentru sănătatea familiei.",
+            "voice": "Încrezător, Empatic, Profesionist, Accesibil, Responsabil"
+        };
+
+        const productsData = [
+            {
+                "name": "ADULT GUARD D3",
+                "description_short": "Contribuie la menținerea sănătății oaselor, a dinților și la funcționarea normală a sistemului imunitar la adulți.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Arie terapeutică": "Contribuie la menținerea sănătății oaselor, a dinților și la funcționarea normală a sistemului imunitar la adulți, printr-un aport eficient de vitamina D3."
+                    },
+                    "Descriere": {
+                        "text": "Adult Guard D3 2000 UI furnizează o doză eficientă de vitamina D3 într-o singură picătură, cu aromă plăcută de lămâie. Forma lichidă și picurătorul integrat în dop asigură o administrare ușoară și precisă."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Soluție orală de 10 ml cu vitamina D3. Aromă naturală de lămâie. Concentrație: 2000 UI per picătură. Mod de administrare: picurator inclus pentru dozare precisă. Formulă în ulei pentru absorbție optimă. Fabricat în UE conform standardelor europene.",
+                        "Avantaje competitive": "Concentrație optimă de 2000 UI per picătură - doza recomandată pentru adulți. Aromă naturală de lămâie. Sistem picurator pentru dozare precisă și ușor de folosit. Absorbție rapidă. Produs în UE cu standarde înalte de calitate. Format compact și practic pentru uz zilnic.",
+                        "Beneficii principale": "Contribuie la funcționarea normală a sistemului imunitar. Ajută la menținerea concentrațiilor normale de calciu în sânge. Contribuie la menținerea sănătății dinților și la absorbția/utilizarea normală a calciului și a fosforului în organism.",
+                        "USP / Diferențiatori cheie": "Sistem picurator pentru dozare precisă și ușor de folosit. Absorbție rapidă. Aromă naturală de lămâie fără aditivi artificiali.",
+                        "Reasons to believe": "Vitamina D3 (colecalciferol) - forma bioactivă superioară vitaminei D2. Dozaj de 2000 UI aliniat cu recomandările medicale europene. Aromă naturală de lămâie fără aditivi artificiali. Formulă în ulei pentru absorbție rapidă. Fabricat în UE conform standardelor farmaceutice europene."
+                    },
+                     "Audiență și piață": {
+                        "Profil public țintă principal": "Adulți activi între 25-45 de ani, preponderent femei, cu educație medie-superioară și venit mediu, care adoptă proactiv măsuri preventive pentru sănătate și caută soluții de calitate pentru întărirea imunității. Sunt consumatori informați care valorifică investiția în sănătatea pe termen lung.",
+                        "Nevoie / Problemă cheie": "Oboseala cronică și lipsa de energie în viața zilnică agitată, îngrijorarea pentru imunitatea scăzută în contextul stresului profesional și al expunerii reduse la lumina naturală, plus conștientizarea riscurilor pe termen lung asupra sănătății osoase în absența suplementării cu vitamina D.",
+                        "Segmente de public secundare": "Femei însărcinate și care alăptează (cu recomandare medicală). Seniori activi 50+ care caută prevenirea osteoporozei. Persoane cu stil de viață predominant indoor (birouri, IT). Adulți cu antecedente familiale de osteoporoză.",
+                        "Sezonalitate": "Vârf de cerere octombrie-martie datorat scăderii expunerii la soare și creșterii îngrijorărilor pentru imunitate în sezonul rece. Scădere aprilie-septembrie când expunerea naturală la soare crește. Campanii intense de back-to-work în septembrie și de pregătire pentru iarnă în octombrie-noiembrie.",
+                        "Competitori principali": "Sanience D3, Detrical, Secom, Vigantolette, Dr Max"
+                    },
+                    "Informații tehnice și legale": {
+                        "Vârsta de administrare": "De la 18 ani în sus, fără restricție de vârstă superioară. Administrare conform recomandărilor medicului.",
+                        "Disclaimer standard": "Aceste produse sunt suplimente alimentare și nu trebuie să înlocuiască o dietă variată, echilibrată și un stil de viață sănătos. Citiți cu atenție prospectul. Dacă aveți orice întrebări suplimentare, adresați-vă medicului dumneavoastră."
+                    }
+                }
+            },
+            {
+                "name": "JUNIOR GUARD D3",
+                "description_short": "Asigură necesarul de vitamina D3 pentru creșterea și dezvoltarea normală a oaselor la copii, întărind imunitatea.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Arie terapeutică": "Asigură necesarul de vitamina D3 pentru creșterea și dezvoltarea normală a oaselor la copii, întărind în același timp imunitatea în perioadele vulnerabile."
+                    },
+                    "Descriere": {
+                         "text": "Junior Guard D3 oferă doza necesară de vitamina D3 (500 UI – 1500 UI) într-un număr de 1-3 picături, cu aromă plăcută de lămâie provenită din surse naturale. Forma lichidă și picurătorul integrat în dop asigură o administrare ușoară și precisă."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "Soluție orală de 10 ml cu vitamina D3. Aromă naturală de lămâie. Concentrație: 500 UI per picătură. Mod de administrare: picurator inclus pentru dozare precisă. Formulă în ulei pentru absorbție optimă. Fabricat în UE conform standardelor europene.",
+                        "Avantaje competitive": "Dozaj adaptat specific pentru copii (500 UI). Aromă naturală de lămâie care face administrarea plăcută pentru copii. Sistem picurator pentru dozare precisă și ușor de folosit. Absorbție rapidă. Produs în UE cu standarde înalte de calitate. Format compact și practic pentru uz zilnic.",
+                        "Beneficii principale": "Susține dezvoltarea osoasă și dentară normală în perioada de creștere. Întărește imunitatea naturală pentru protecție la colectivitate. Contribuie la funcția musculară optimă pentru activitate fizică.",
+                        "USP / Diferențiatori cheie": "Sistem picurator pentru dozare precisă și ușor de folosit. Absorbție rapidă. Aromă naturală de lămâie fără aditivi artificiali. Flexibilitate în dozare conform vârstei (1-3 picături).",
+                        "Reasons to believe": "Doza de 500 UI aliniată cu recomandările pediatrice europene pentru copii. Vitamina D3 esențială pentru absorbția calciului în perioada de creștere rapidă. Aromă naturală de lămâie fără aditivi artificiali. Formulă în ulei pentru absorbție rapidă. Fabricat în UE conform standardelor farmaceutice europene."
+                    },
+                     "Audiență și piață": {
+                        "Profil public țintă principal": "Mame informate între 28-42 de ani, cu educație medie-superioară și preocupări active pentru dezvoltarea optimă a copilului, care caută soluții preventive pentru sănătatea copiilor de vârstă școlară. Sunt părinți care înțeleg importanța suplementării și doresc produse de calitate adaptate nevoilor specifice ale copiilor.",
+                        "Nevoie / Problemă cheie": "Îngrijorarea pentru imunitatea scăzută a copilului la colectivitate și îmbolnăvirile frecvente, preocuparea pentru dezvoltarea osoasă optimă în perioada de creștere rapidă, plus necesitatea unei soluții ușor de administrat care să fie acceptată de copil fără conflict zilnic.",
+                        "Segmente de public secundare": "Părinți de copii cu imunitate scăzută. Familii cu copii foarte activi sportiv. Părinți de copii cu probleme de concentrare la școală. Copii cu expunere redusă la soare (multe ore la școală/acasă).",
+                        "Sezonalitate": "Vârf major septembrie-octombrie (back-to-school) și noiembrie-februarie (sezonul rece și gripă). Creștere în martie-aprilie (pregătirea pentru examene și asteniile de primăvară). Scădere iunie-august când copiii petrec mai mult timp afară. Pattern-ul urmează calendarul școlar și sezonul de îmbolnăviri.",
+                        "Competitori principali": "Vigantol, Secom, Sun D3, Dr Max"
+                    },
+                    "Informații tehnice și legale": {
+                        "Vârsta de administrare": "De la 3 ani până la 18 ani. Nu se utilizează la copii sub 3 ani. Administrare conform recomandărilor medicului.",
+                        "Disclaimer standard": "Aceste produse sunt suplimente alimentare și nu trebuie să înlocuiască o dietă variată, echilibrată și un stil de viață sănătos. Citiți cu atenție prospectul. Dacă aveți orice întrebări suplimentare, adresați-vă medicului dumneavoastră."
+                    }
+                }
+            },
+            {
+                "name": "BABY GUARD D3",
+                "description_short": "Sprijină dezvoltarea oaselor și funcționarea sistemului imunitar la sugari, contribuind la prevenirea rahitismului.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Arie terapeutică": "Sprijină dezvoltarea oaselor și funcționarea normală a sistemului imunitar la sugari, contribuind la prevenirea rahitismului și la o creștere sănătoasă încă din primele luni de viață."
+                    },
+                     "Descriere": {
+                         "text": "Baby Guard D3 oferă o doză de 400 UI de vitamina D3 într-o capsulă twist-off ușor de folosit. Capsulele sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "40 capsule cu sistem \"twist-off\" pentru administrare ușoară. Vitamina D3 (colecalciferol) 400 UI în ulei extravirgin de măsline. Doar conținutul capsulei este destinat ingerării. După golire, capsula trebuie aruncată. Conținut lichid se administrează direct în linguriță sau gura copilului. Administrare în timpul mesei, 2 capsule pe zi. Fabricat în UE conform standardelor europene.",
+                        "Avantaje competitive": "Capsulele \"Twist-off\" sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer, ușor de manipulat pentru părinți. Administrare sigură și precisă fără risc pentru sugar. Format practic pentru 40 de administrări.",
+                        "Beneficii principale": "Previne rahitismul și susține dezvoltarea osoasă normală. Facilitează absorbția calciului și fosforului esențiali. Susține dezvoltarea sistemului imunitar în primii ani de viață.",
+                        "USP / Diferențiatori cheie": "Capsulele \"Twist-off\" sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer, ușor de manipulat pentru părinți. Administrare sigură și precisă fără risc pentru sugar. Absorbție rapidă.",
+                        "Reasons to believe": "Ulei extravirgin de măsline - vehicul natural cu absorbție optimă. Dozaj conform ghidurilor pediatrice românești și europene. Capsulele \"twist-off\" sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer. Fabricat în UE conform standardelor farmaceutice europene."
+                    },
+                     "Audiență și piață": {
+                        "Profil public țintă principal": "Mame primipare și multipare între 24-35 de ani, cu preocupări intense pentru dezvoltarea optimă a sugarului, care urmează cu strictețe recomandările pediatrului și caută produse de înaltă calitate și siguranță maximă. Sunt mame care nu fac compromisuri când vine vorba de sănătatea copilului și preferă branduri de încredere.",
+                        "Nevoie / Problemă cheie": "Nevoia de a susține dezvoltarea optimă a sugarului, alături de teama de rahitism sau tulburări de creștere osoasă, se împletesc cu dorința părinților de a administra suplimentele în cel mai sigur mod posibil – fără risc de înecare – și cu respectarea strictă a recomandărilor medicale pentru cei mai vulnerabili membri ai familiei.",
+                        "Segmente de public secundare": "Sugari născuți în lunile de iarnă cu expunere redusă la soare. Mame care alăptează exclusiv și nu dau alte suplimente. Bunici care participă activ la îngrijirea sugarului.",
+                        "Sezonalitate": "Cerere constantă pe tot parcursul anului datorită recomandărilor medicale continue pentru toți sugarii. Ușoară creștere octombrie-martie (sugari născuți în sezonul rece) și în perioadele de controale pediatrice intense (1, 2, 4, 6, 9, 12 luni). Vârfuri de achiziție în jurul vizitelor de rutină la pediatru.",
+                        "Competitori principali": "Vigantol, Secom, Sun D3, Dr Max"
+                    },
+                    "Informații tehnice și legale": {
+                        "Vârsta de administrare": "De la naștere până la 3 ani. Administrare conform recomandărilor pediatrului.",
+                        "Disclaimer standard": "Aceste produse sunt suplimente alimentare și nu trebuie să înlocuiască o dietă variată, echilibrată și un stil de viață sănătos. Citiți cu atenție prospectul. Dacă aveți orice întrebări suplimentare, adresați-vă medicului dumneavoastră."
+                    }
+                }
+            },
+            {
+                "name": "BABY GUARD DHA",
+                "description_short": "Contribuie la dezvoltarea creierului, a vederii și a sistemului nervos al sugarilor.",
+                "details": {
+                    "Informații generale": {
+                        "Categorie": "Supliment alimentar",
+                        "Arie terapeutică": "Contribuie la dezvoltarea creierului, a vederii și a sistemului nervos al sugarilor, datorită conținutului de DHA, și sprijină dezvoltarea oaselor și imunitatea prin aportul de vitamina D3."
+                    },
+                     "Descriere": {
+                         "text": "Baby Guard DHA oferă o combinație optimă de DHA(150 mg) și vitamina D3(400 UI) într-o capsulă twist-off, ușor de utilizat. Capsulele sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer."
+                    },
+                    "Caracteristici și avantaje": {
+                        "Caracteristici": "30 capsule cu sistem \"twist-off\" pentru administrare ușoară. Omega 3 (DHA) 150 mg din microalga Schizochytrium sp. cu 35% concentrație. Vitamina D3 (colecalciferol) 400 UI. Doar conținutul capsulei este destinat ingerării. După golire, capsula trebuie aruncată. Conținut lichid se administrează direct în linguriță sau gura copilului. Administrare în timpul mesei, 2 capsule pe zi. Fabricat în UE conform standardelor europene.",
+                        "Avantaje competitive": "Combinație unică DHA + Vitamina D3 în același produs. DHA din sursă vegetală (microalgă). Capsulele \"Twist-off\" sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer, ușor de manipulat pentru părinți. Administrare sigură și precisă fără risc pentru sugar.",
+                        "Beneficii principale": "Susține dezvoltarea normală a creierului și funcțiilor cognitive. Contribuie la menținerea vederii normale și dezvoltarea vizuală. Completează beneficiile vitaminei D3 pentru imunitate și dezvoltare osoasă.",
+                        "USP / Diferențiatori cheie": "DHA + D3 - Capsule \"Twist-off\" ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer, ușor de manipulat pentru părinți. Administrare sigură și precisă fără risc pentru sugar. Absorbție rapidă. DHA din sursă vegetală. Soluție completă pentru dezvoltare neurală și fizică simultană.",
+                        "Reasons to believe": "DHA este componentul principal al țesutului cerebral (40% din acizii grași). Microalga Schizochytrium sp. - sursă pură și concentrată de DHA. Combinația DHA + D3 recomandată de specialiști pentru dezvoltare optimă. Studii clinice demonstrează importanța DHA în primii ani de viață. Capsulele \"twist-off\" sunt ambalate individual în blistere, asigurând protecția conținutului de expunerea la aer. Fabricat în UE conform standardelor farmaceutice europene."
+                    },
+                     "Audiență și piață": {
+                        "Profil public țintă principal": "Mame educate între 24-38 de ani, cu preocupări specifice pentru dezvoltarea cognitiv-neurală optimă a copilului, care înțeleg importanța DHA pentru creier și caută soluții premium pentru stimularea inteligenței și dezvoltării vizuale. Sunt mame care nu fac compromisuri când vine vorba de sănătatea copilului și preferă branduri de încredere.",
+                        "Nevoie / Problemă cheie": "Preocuparea pentru susținerea dezvoltării cognitive, vizuale și neurologice a copilului este însoțită de dorința de a acoperi nevoile esențiale de DHA și vitamina D3, printr-o combinație ideală de nutrienți care contribuie la o creștere echilibrată și sănătoasă în primii ani de viață.",
+                        "Segmente de public secundare": "Mame de sugari prematuri cu nevoi speciale de dezvoltare. Mame de copii cu dezvoltare întârziată a vorbirii. Familii vegetariene/vegane care evită suplimentele din pește. Copii cu antecedente familiale de probleme de vedere. Mame foarte informate despre nutriția optimă pentru creier.",
+                        "Sezonalitate": "Cerere crescută septembrie-octombrie (back-to-school pentru frați mai mari, focus pe dezvoltare cognitivă) și ianuarie-martie (rezoluții pentru dezvoltarea copilului, pregătire pentru grădiniță). Creștere în perioadele de controale de dezvoltare neurală la pediatru. Scădere în vacanțele de vară când focusul se mută pe activități în aer liber.",
+                        "Competitori principali": "Moller, Secom, Pediakid, Dr Max"
+                    },
+                    "Informații tehnice și legale": {
+                        "Vârsta de administrare": "De la naștere până la 3 ani. Administrare conform recomandărilor pediatrului.",
+                        "Disclaimer standard": "Aceste produse sunt suplimente alimentare și nu trebuie să înlocuiască o dietă variată, echilibrată și un stil de viață sănătos. Citiți cu atenție prospectul. Dacă aveți orice întrebări suplimentare, adresați-vă medicului dumneavoastră."
+                    }
+                }
+            }
+        ];
+        
+        const instructionsText = `# INSTRUCȚIUNI DE SISTEM — FAMILIA GUARD
+
+## 1. ROL
+Ești Asistentul pentru brandul **Familia Guard**. Scop: să asisti echipa de marketing în generarea de conținut, strategii și suport operațional pentru produsele Familia Guard.
+
+## 2. REFERINȚE LA INFORMAȚII
+**IMPORTANT:** Toate informațiile detaliate despre brand, produse, audiențe țintă, beneficii, USP-uri, competitori și alte date specifice se găsesc în fișierul \`informatii_familia_guard.txt\`. 
+
+Consultă întotdeauna acest fișier pentru:
+- Descrierile exacte ale produselor (Adult Guard D3, Junior Guard D3, Baby Guard D3, Baby Guard DHA)
+- Profilurile audiențelor țintă și demografiile
+- Beneficiile și caracteristicile produselor
+- USP-urile și diferențiatorii cheie
+- Informațiile despre competitori
+- Sezonalitatea fiecărui produs
+- Disclaimer-ul legal standard
+
+## 3. PRINCIPII DE COMUNICARE / TON
+- **Ton:** încrezător, empatic, profesionist, accesibil, responsabil
+- **Limbaj:** clar, scurt și practic. Evită jargonul inutil
+- **Structură:** oferă alternativă scurtă + alternativă lungă când propui copy
+- **Obiectiv:** sprijinirea obiectivului de business - creșterea notorietății și atingerea unui Market Share de 2% pe categoria Vitamina D3 (all brand)
+
+## 4. INSTRUCȚIUNI GENERALE PENTRU RĂSPUNSURI
+
+### Pentru conținut social media:
+- Oferă **2 variante de copy**:
+  - **Scurtă:** ≤ 60 caractere
+  - **Lungă:** ≤ 150 caractere
+- Include **CTA relevant**
+- Propune **3 hashtag-uri** relevante
+
+### Pentru materiale tehnice/medicale:
+Structurează ca:
+- **Descriere**
+- **Beneficii**
+- **Mod de administrare**
+- **Contraindicații**
+- **Puncte cheie pentru echipa medicală**
+
+### Pentru briefuri interne:
+- Bullets clare, 3-5 puncte acționabile
+- Plus 1 propoziție „Key message"
+
+## 5. PRIORITIZĂRI ÎN RĂSPUNSURI
+- Prioritizează claritatea și recomandări acționabile
+- Fii concis; când e nevoie de detaliu, structurează în bullet points
+- Folosește informațiile din \`informatii_familia_guard.txt\` pentru acuratețe
+- Adaptează tonul și mesajul în funcție de produsul specific și audiența țintă
+
+## 6. CONSTRÂNGERI DE COMUNICARE / LEGAL
+- Orice afirmație cu efect terapeutic trebuie verificată legal / farmaco-reglementativ
+- Include disclaimer-ul standard pentru suplimente în materialele publice (vezi \`informatii_familia_guard.txt\`)
+- Respectă limitările de vârstă pentru fiecare produs
+- Nu face afirmații medicale nefondate
+
+## 7. WORKFLOW RECOMANDAT
+1. **Identifică** produsul/produsele relevante pentru solicitare
+2. **Consultă** \`informatii_familia_guard.txt\` pentru detalii specifice
+3. **Adaptează** tonul și mesajul la audiența țintă relevantă
+4. **Structurează** răspunsul conform instrucțiunilor de format
+5. **Include** disclaimer-ul când este necesar
+6. **Propune** alternative sau variante când este relevant
+
+## 8. EXEMPLE DE UTILIZARE
+
+### Pentru Adult Guard D3:
+- Focus: adulți 25-45 ani, energie zilnică, imunitate
+- Ton: profesional dar accesibil, focus pe beneficii practice
+
+### Pentru Junior Guard D3:
+- Focus: părinți îngrijorați, dezvoltare copii, administrare ușoară
+- Ton: empatic, înțelegător, centrat pe siguranță
+
+### Pentru Baby Guard D3:
+- Focus: mame primipare, siguranță maximă, recomandări pediatrice
+- Ton: reconfortant, profesionist, focus pe încredere
+
+### Pentru Baby Guard DHA:
+- Focus: dezvoltare cognitivă, mame educate, soluții premium
+- Ton: informativ, premium, focus pe dezvoltare optimă
+
+## 9. NOTA FINALĂ
+Consultă întotdeauna fișierul \`informatii_familia_guard.txt\` pentru informații complete și actualizate înainte de a genera orice conținut sau recomandare pentru brandul Familia Guard.`;
+
+        // --- FUNCTII DE RENDERIZARE ---
+
+        function createInfoCard(title, content, iconSvg) {
+            return `
+                <div class="brand-card bg-white p-6 rounded-xl shadow-lg fade-in-up">
+                    <div class="flex items-center mb-3">
+                        ${iconSvg}
+                        <h3 class="text-lg font-bold text-slate-800 ml-3">${title}</h3>
+                    </div>
+                    <p class="text-slate-600 text-base">${content || 'N/A'}</p>
+                </div>
+            `;
+        }
+        
+        function createDetailSection(title, details) {
+            let itemsHtml = '';
+            if (typeof details === 'object' && details !== null && !details.text) {
+                 for (const [key, value] of Object.entries(details)) {
+                    itemsHtml += `
+                        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4">
+                            <dt class="text-sm font-semibold text-slate-600">${key.replace(/_/g, ' ').charAt(0).toUpperCase() + key.replace(/_/g, ' ').slice(1)}</dt>
+                            <dd class="mt-1 text-sm text-slate-700 sm:mt-0 sm:col-span-2">${value || 'N/A'}</dd>
+                        </div>
+                    `;
+                }
+            } else {
+                 itemsHtml = `<div class="py-4"><dd class="text-sm text-slate-700">${details.text || details}</dd></div>`;
+            }
+
+            return `
+                <div class="mb-6">
+                    <h4 class="text-lg font-bold text-brand mb-2">${title}</h4>
+                    <dl class="divide-y divide-slate-200">${itemsHtml}</dl>
+                </div>
+            `;
+        }
+
+
+        function renderBrandInfo() {
+            const container = document.getElementById('brand-info');
+            const icons = {
+                essence: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+                objective: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+                voice: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>`
+            };
+            let html = createInfoCard('Esența brandului', brandData.essence, icons.essence);
+            html += createInfoCard('Obiectivul principal', brandData.objective, icons.objective);
+            html += createInfoCard('Vocea brandului', brandData.voice, icons.voice);
+            container.innerHTML = html;
+        }
+
+        function renderProductsAccordion() {
+            const container = document.getElementById('products-accordion');
+            let html = '';
+            productsData.forEach(product => {
+                let detailsHtml = '';
+                for (const [sectionTitle, sectionDetails] of Object.entries(product.details)) {
+                    detailsHtml += createDetailSection(sectionTitle, sectionDetails);
+                }
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-lg fade-in-up">
+                        <h2>
+                            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-bold text-slate-800">${product.name}</span>
+                                    <span class="text-sm font-normal text-slate-500 mt-1 pr-4">${product.description_short}</span>
+                                </div>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 icon-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content">
+                            <div class="border-t border-slate-200 p-6">
+                               ${detailsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+        
+        function renderAiInstructions() {
+            const container = document.getElementById('ai-instructions-accordion');
+            const accordionTitle = `# INSTRUCȚIUNI DE SISTEM - ${brandData.name.toUpperCase()}`;
+
+            container.innerHTML = `
+                <div class="bg-slate-800 rounded-xl shadow-lg fade-in-up">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                            <span class="text-lg font-bold text-slate-200 font-mono tracking-tight">${accordionTitle}</span>
+                            <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content">
+                        <div class="border-t border-slate-700 p-4 relative ai-instructions-container">
+                             <button id="copy-ai-btn" class="absolute top-6 right-6 bg-brand hover:bg-brand-dark text-white font-bold py-2 px-4 rounded-lg transition-all duration-300 z-10">
+                                Copiază
+                            </button>
+                            <pre id="ai-instructions-text" class="text-slate-200 pr-28">${instructionsText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function setupButtonListeners() {
+            // Acordeon
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.parentElement.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    button.classList.toggle('active');
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        content.style.padding = "0";
+                    } else {
+                        content.style.maxHeight = null;
+                        content.style.padding = "0 1.5rem";
+                    }
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('brand-name-header').textContent = brandData.name;
+            renderBrandInfo();
+            renderProductsAccordion();
+            renderAiInstructions(); 
+            
+            setupButtonListeners();
+            
+            const copyBtn = document.getElementById('copy-ai-btn');
+            if(copyBtn) {
+                 copyBtn.addEventListener('click', () => {
+                    const copyText = document.getElementById('ai-instructions-text').textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = copyText;
+                    
+                    textArea.style.position = "fixed";
+                    textArea.style.top = 0;
+                    textArea.style.left = 0;
+                    textArea.style.width = "2em";
+                    textArea.style.height = "2em";
+                    textArea.style.padding = 0;
+                    textArea.style.border = "none";
+                    textArea.style.outline = "none";
+                    textArea.style.boxShadow = "none";
+                    textArea.style.background = "transparent";
+                    
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        const successful = document.execCommand('copy');
+                        if(successful) {
+                            copyBtn.textContent = 'Copiat!';
+                            copyBtn.classList.remove('bg-brand', 'hover:bg-brand-dark');
+                            copyBtn.classList.add('bg-green-500');
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copiază';
+                                copyBtn.classList.remove('bg-green-500');
+                                copyBtn.classList.add('bg-brand', 'hover:bg-brand-dark');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Nu s-a putut copia textul', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                });
+            }
+
+            // Stagger animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.style.animationDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Hub MagnaPharm - Caffetin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .brand-card, .accordion-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .ai-instructions-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Culoarea brandului este injectata aici */
+        :root {
+            --brand-color: #f4da58;
+        }
+        .text-brand { color: var(--brand-color); }
+        .bg-brand { background-color: var(--brand-color); }
+        .hover\:bg-brand-dark:hover { 
+            filter: brightness(0.9);
+        }
+        .icon-brand { color: var(--brand-color); }
+
+        .prose ul > li::marker {
+           color: var(--brand-color);
+        }
+
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Antet Hero -->
+        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight"><a href="https://brands.clxdigital.ro/" class="text-white hover:text-slate-200 transition-colors duration-300">Brand Hub MagnaPharm</a></h1>
+            <p id="brand-name-header" class="text-brand text-xl md:text-4xl font-semibold mt-2">Caffetin</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <a href="https://magnapharmholdings-my.sharepoint.com/:x:/g/personal/claudiu_ciobanu_magnapharm_eu/ERmYrrTfy09Nral2Pf2AE34B_mamzb8pwkodOgJrXDxqCg?e=IsGM2c&nav=MTVfezY2RURCOTk0LTk5ODQtNDk4MS1CRkJGLTBFQ0M2Q0M1RUFBMH0" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Planificare campanii 📆
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/EnhIkyPl_2xKtRSSy_yOgskB8Ffb-0i6Lh2x3dMXWOb8Nw?e=VQBQx2" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Imagini produse 🖼️
+                </a>
+                <a href="https://magnapharmholdings-my.sharepoint.com/:f:/g/personal/claudiu_ciobanu_magnapharm_eu/Eu4VhzULbmJJp7x226QoHasBnsZyjJbflkSjyVDymLcM1A?e=SwbaLP" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                    Logo 🎨
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sectiune Informatii Generale Brand -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Sumar strategic</h2>
+                <div id="brand-info" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Continut generat de JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sectiune Produse - Acordeon -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6 text-center">Portofoliu de produse</h2>
+                <div id="products-accordion" class="space-y-4">
+                    <!-- Acordeoane generate de JavaScript -->
+                </div>
+            </div>
+
+            <!-- Sectiune Instructiuni AI -->
+            <div>
+                 <h2 class="text-3xl font-bold text-slate-800 mb-4 text-center">Instrucțiuni de sistem Asistent AI personalizat 🤖</h2>
+                 <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto">Folosește instrucțiunile de mai jos pentru a crea un asistent AI personalizat în ChatGPT, gata să te ajute cu sarcinile de marketing pentru brand. Urmează ghidul rapid de mai jos.</p>
+
+                 <!-- Ghid de creare in 3 pasi -->
+                <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <!-- Pasul 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-slate-800 text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">1</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Crearea proiectului</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">În ChatGPT, apasă pe <strong class="font-semibold text-slate-700">New Project</strong> în bara laterală, numește proiectul (ex: Caffetin), apoi apasă <strong class="font-semibold text-slate-700">Create</strong>.</p>
+                    </div>
+                    <!-- Pasul 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-slate-800 text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">2</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Adăugarea instrucțiunilor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">Apasă pe cele 3 puncte (dreapta-sus) și alege <strong class="font-semibold text-slate-700">Add Instructions</strong>. Lipește textul copiat de mai jos și apasă <strong class="font-semibold text-slate-700">Save</strong>.</p>
+                    </div>
+                    <!-- Pasul 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
+                        <div class="flex items-center">
+                            <span class="bg-brand text-slate-800 text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">3</span>
+                            <h3 class="ml-4 text-xl font-bold text-slate-800">Încărcarea fișierelor</h3>
+                        </div>
+                        <p class="mt-4 text-slate-600">(Recomandat) Apasă pe <strong class="font-semibold text-slate-700">Add Files</strong> pentru a încărca materiale relevante (prezentări, broșuri) pentru un context complet.</p>
+                    </div>
+                </div>
+
+                 <div id="ai-instructions-accordion" class="space-y-4 max-w-5xl mx-auto">
+                    <!-- Acordeon AI generat de JavaScript -->
+                 </div>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-20 text-slate-500">
+            <div class="mb-10">
+                <h3 class="text-xl font-bold text-slate-700 mb-6">Responsabili brand</h3>
+                <div id="responsabili-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto justify-center">
+                    <!-- Continut generat de JS -->
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2025 Brand Hub Dashboard. Property of MagnaPharm Marketing & Sales Romania</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- DATE INJECTATE ---
+        
+        const brandData = {
+            "name": "CAFFETIN",
+            "essence": "CAFFETIN este brandul de încredere pentru ameliorarea rapidă și eficientă a simptomelor de răceală, gripă și durere, oferind soluții terapeutice adaptate nevoilor specifice ale fiecărui consumator. Brandul combină ingrediente active validate clinic în formule optimizate pentru a asigura ameliorarea rapidă și durabilă a simptomelor.",
+            "objective": "Stabilirea brandului Caffetin ca o <b>opțiune de top</b> în segmentul de analgezice, prin valorificarea formulelor sale combinate și consolidarea încrederii consumatorilor. În paralel, ne propunem să <b>creștem semnificativ prezența</b> în categoria produselor pentru răceală și gripă, oferind soluții complete și eficiente pentru ameliorarea rapidă a simptomelor.",
+            "voice": "Eficient, Cunoscător, De încredere, Empatic, Orientat către soluții"
+        };
+
+        const productsData = [
+            {
+                "name": "CAFFETIN COLD PLUS COMPRIMATE FILMATE",
+                "description_short": "Ameliorarea simptomelor de răceală și gripă (dureri, congestie, febră, tuse) la adulți și adolescenți de la 12 ani.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Segment:</b> RĂCEALĂ ȘI GRIPĂ<br><b>Obiectiv produs:</b> Atingerea unui Market Share de 0.45%, și un număr total de unități ieșite pe SO de 106.865 unități<br><b>Arie terapeutică:</b> Simptomele de răceală și gripă</p>" },
+                    { "title": "Descriere", "content": "<p>Caffetin Cold Plus este utilizat pentru ameliorarea simptomelor de răceală și gripă (ameliorarea durerilor generale, durerilor în gât, durerilor de cap, congestiei nazale și scăderea temperaturii și ameliorarea tusei).</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Comprimate filmate oblonge, biconvexe, de culoare albastră cu linie mediană</li><li><b>Compoziție per comprimat:</b> Paracetamol 500 mg, Clorhidrat de pseudoefedrină 30 mg, Bromhidrat de dextrometorfan 15 mg, Acid ascorbic (vitamina C) 60 mg</li><li>Administrare orală</li><li>Ambalaj: cutie cu 1 blister din 10 comprimate filmate</li><li>Poate fi luat cu sau fără alimente</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Formulă completă cu 4 ingrediente active care acționează simultan asupra tuturor simptomelor majore de răceală și gripă</li><li>Conține vitamina C pentru susținerea sistemului imunitar</li><li>Acțiune rapidă prin combinația optimizată de substanțe active</li><li>Formulă validată clinic pentru eficacitate maximă</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorează rapid și eficace toate simptomele de răceală și gripă într-o singură administrare</li><li>Reduce febra și durerea în timp ce deblochează căile nazale și calmează tusea</li><li>Întărește sistemul imunitar prin vitamina C inclusă în formulă</li></ul>" },
+                    { "title": "Reasons to believe", "content": "<ul><li>Paracetamol validat clinic pentru ameliorarea durerii și reducerea febrei</li><li>Pseudoefedrina cu eficacitate dovedită ca decongestionant nazal</li><li>Dextrometorfan cu acțiune antitusivă confirmată pentru calmarea tusei iritatice</li><li>Acid ascorbic (vitamina C) pentru susținerea sistemului imunitar</li><li>Combinație de ingrediente active cu mecanisme de acțiune complementare</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li>Formulă care combină 4 ingrediente active pentru acoperirea completă a simptomelor de răceală și gripă</li><li>Include vitamina C pentru suport imunitar suplimentar</li><li>Eficacitate dovedită în ameliorarea simultană a durerii, febrei, congestiei nazale și tusei</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p><b>De la 12 ani în sus.</b> Contraindicat la copii sub 12 ani.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți și adolescenți peste 12 ani care suferă de simptome multiple de răceală sau gripă și caută o soluție rapidă și completă pentru ameliorarea tuturor simptomelor simultan. Persoane active care nu își permit să fie imobilizate de boală și au nevoie de ameliorare eficientă pentru a-și continua activitățile zilnice.</p>" },
+                    { "title": "Demografie", "content": "<ul><li><b>Vârstă:</b> 35-65 ani</li><li><b>Gen:</b> ambele genuri cu accent pe femei</li><li><b>Locație:</b> urban, periurban și rural</li><li><b>Nivel socio-economic:</b> scăzut, mediu și mediu-ridicat</li><li><b>Stil de viață:</b> activ, părinți, angajați, studenți</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Frustrarea de a avea multiple simptome de răceală sau gripă care afectează productivitatea și calitatea vieții zilnice. Nevoia de a lua multiple medicamente pentru simptome diferite și dorința unei soluții complete și rapide care să permită reluarea activităților normale cât mai curând posibil.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Părinți care caută soluții eficiente pentru adolescenții lor peste 12 ani</li><li>Persoane care călătoresc frecvent și sunt expuse la risc crescut de răceală</li><li>Persoane care lucrează în echipă și nu își permit să transmită boala colegilor</li><li>Persoane cu episoade de gripă sau răceală recurente</li></ul>" },
+                    { "title": "Sezonalitatea", "content": "<p>Sezon de vârf: octombrie-martie (sezonul răcelilor și gripei). Creștere moderată: septembrie și aprilie (tranziții sezoniere). Scădere: mai-august (sezon cald, incidență redusă a răcelilor). Pattern-ul urmează ciclul natural al bolilor respiratorii și schimbările de temperatură.</p>" },
+                    { "title": "Competitori principali", "content": "<p>PARASINUS, MODAFEN, NUROFEN, PADUDEN, BIOFLU</p>" }
+                ]
+            },
+            {
+                "name": "CAFFETIN COLDMAX PULBERE PENTRU SOLUȚIE ORALĂ ÎN PLIC",
+                "description_short": "Ameliorarea simptomelor severe de răceală și gripă (dureri, congestie, febră) la adulți și adolescenți de la 16 ani.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Segment:</b> RĂCEALĂ ȘI GRIPĂ<br><b>Arie terapeutică:</b> Simptomele de răceală și gripă</p>" },
+                    { "title": "Descriere", "content": "<p>Caffetin Cold Max este utilizat pentru ameliorarea simptomelor de răceală și gripă, incluzând ameliorarea durerilor generale, durerilor faringiene, cefaleei, congestiei nazale și pentru scăderea temperaturii.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Pulbere pentru soluție orală de culoare albă în plicuri laminat</li><li><b>Compoziție per plic:</b> Paracetamol 1000 mg, Clorhidrat de fenilefrină 12,2 mg</li><li>Se dizolvă în 250 ml de apă caldă (nu fierbinte)</li><li>Soluție incoloră cu aromă de lămâie-mentol</li><li>Ambalaj: cutie cu 10 plicuri</li><li>Conține zahăr aproximativ 2,6 g per plic</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Doză maximă de paracetamol (1000 mg) care se poate elibera fără prescripție medicală pentru analgezie și antipireză puternice</li><li>Formulă în pulbere cu absorbție rapidă prin forma lichidă</li><li>Aromă plăcută de lămâie-mentol care facilitează administrarea</li><li>Convenabil pentru transport și preparare rapidă</li><li>Hidratare suplimentară prin consumul lichidului preparat</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorare rapidă a febrei și a durerilor generale asociate unei răceli sau gripe</li><li>Reducerea eficientă a congestiei nazale prin acțiunea decongestionantă</li><li>Experiență plăcută de administrare prin aroma de lămâie-mentol</li></ul>" },
+                    { "title": "Reasons to believe", "content": "<ul><li>Doză maximă de paracetamol acordată fără prescripție medicală (1000 mg) pentru eficacitate superioară în ameliorarea durerii și febrei</li><li>Fenilfrina cu acțiune decongestionantă dovedită pentru eliberarea căilor nazale</li><li>Forma farmaceutică lichidă pentru absorbție mai rapidă comparativ cu comprimatele</li><li>Formulă validată în studii clinice pentru ameliorarea simptomelor de răceală și gripă</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<ul><li>Cea mai mare doză de paracetamol care se poate recomanda fără prescripție medicală (1000 mg)</li><li>Sub forma de pulbere cu aromă plăcută care transformă tratamentul într-o experiență confortabilă</li><li>Acțiune rapidă prin absorbția facilitată în formă lichidă</li><li>Convenabil pentru utilizare acasă sau la birou prin preparare simplă</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p><b>De la 16 ani în sus.</b> Contraindicat la copii și adolescenți sub 16 ani.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți și adolescenți peste 16 ani care suferă de simptome severe de răceală sau gripă și au nevoie de ameliorare puternică și rapidă. Persoane care preferă forme farmaceutice lichide și apreciază experiența plăcută de administrare, în special când se simt foarte rău și au dificultăți în a înghiți comprimate.</p>" },
+                    { "title": "Demografie", "content": "<ul><li><b>Vârstă:</b> 30-65 ani</li><li><b>Gen:</b> ambele genuri cu accent pe femei</li><li><b>Locație:</b> urban, periurban și rural</li><li><b>Nivel socio-economic:</b> scăzut, mediu și mediu-ridicat</li><li><b>Ocupații:</b> părinți, angajați cu program intensiv, profesioniști, studenți</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Simptome severe de răceală sau gripă care necesită ameliorare puternică și rapidă. Dificultatea în a înghiți comprimate când se simt foarte rău sau au durere în gât. Nevoia unei soluții eficiente care să nu fie neplăcută de administrat când organismul este deja stresat de boală.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Persoane cu dificultăți în înghițirea comprimatelor din diverse motive</li><li>Adulți care preferă tratamente \"de tip ceai\" pentru confortul psihologic</li><li>Persoane care lucrează de acasă și pot prepara ușor soluția</li><li>Vârstnici care au nevoie de hidratare suplimentară în timpul bolii</li><li>Persoane cu episoade de gripă sau răceală recurente</li></ul>" },
+                    { "title": "Sezonalitatea", "content": "<p>Sezon de vârf: noiembrie-februarie (vârful sezonului de gripă când simptomele sunt mai severe). Creștere: octombrie și martie (începutul și sfârșitul sezonului rece). Menținere moderată: septembrie și aprilie. Scădere semnificativă: mai-august. Pattern-ul corelează cu intensitatea sezonului gripal și necesitatea de tratamente mai puternice.</p>" },
+                    { "title": "Competitori principali", "content": "<p>THERAFLU, COLDREX, FERVEX, BIOFLU, GRIPOFF</p>" }
+                ]
+            },
+            {
+                "name": "CAFFETIN COMPRIMATE",
+                "description_short": "Tratamentul durerii de intensitate moderată-severă (migrenă, durere dentară, menstruală) la adulți și adolescenți de la 12 ani.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Segment:</b> DURERE<br><b>Obiectiv produs:</b> Atingerea unui Market Share de 1%, și un număr total de unități ieșite pe SO de 519.821 unități<br><b>Arie terapeutică:</b> Durere de intensitate moderată spre severă</p>" },
+                    { "title": "Descriere", "content": "<p>Caffetin este tratamentul simptomatic al durerii de intensitate moderată-severă: migrenă, durere de cap, durere dentară, durere menstruală, durere postoperatorie și posttraumatică, mialgie și artralgie.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Comprimate rotunde, plate, de culoare albă</li><li>Marcate pe o față cu \"Alkaloid\" și cu \"Caffetin\" pe cealaltă față</li><li><b>Compoziție per comprimat:</b> Paracetamol 250 mg, Propifenazonă 210 mg, Cafeină 50 mg, Fosfat de codeină sesquihidrat 10 mg</li><li>Administrare orală cu cantitate suficientă de lichid</li><li>Ambalaj: cutie cu folie termosudată PE-Al de 12 comprimate</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Combinație analgezică completă cu 4 substanțe active cu mecanisme complementare</li><li>Include codeină pentru dureri moderate spre severe care nu răspund la analgezice simple</li><li>Cafeina amplifică efectul analgezic și oferă stimulare psihomotorie</li><li>Formulă optimizată pentru dureri de diferite tipuri și intensități</li><li>Acțiune rapidă prin combinația sinergică de ingrediente</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorare eficientă a durerilor moderate spre severe care nu răspund la analgezice simple</li><li>Acțiune rapidă și durabilă prin combinația celor 4 substanțe active</li><li>Versatilitate în tratarea diferitelor tipuri de durere (cap, dentară, menstruală, musculară)</li></ul>" },
+                    { "title": "Reasons to believe", "content": "<ul><li>Codeina validată clinic pentru dureri moderate spre severe, superioare paracetamolului simplu</li><li>Propifenazona cu proprietăți analgezice și antipiretice dovedite</li><li>Cafeina îmbunătățește absorbția și eficacitatea celorlalte substanțe active</li><li>Paracetamol cu profil de siguranță cunoscut și eficacitate confirmată</li><li>Combinație analgezică cu experiență clinică extinsă</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<p><b>\"CÂND DUREREA E UN CHIN, NU UITA DE CAFFETIN\"</b></p><ul><li>Singurul produs din gamă care conține codeină pentru dureri moderate spre severe</li><li>Combinație de 4 substanțe active pentru analgezie superioară</li><li>Include cafeină pentru potențarea efectului analgezic și contracarea somnolentei</li><li>Formulă specializată pentru dureri care nu răspund la analgezice simple</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p><b>De la 12 ani în sus.</b><br>Adolescenți 12-18 ani: maximum 1 comprimat la nevoie, max 3 prize pe zi<br>Adulți: 1-2 comprimate la nevoie, max 3 prize pe zi<br>Contraindicat la copii sub 12 ani</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Adulți și adolescenți peste 12 ani care suferă de dureri moderate spre severe care nu se ameliorează suficient cu analgezice simple. Persoane cu dureri recurente (migrene, dureri menstruale, dureri dentare) care au nevoie de o soluție mai puternică și au experiență cu analgezice mai complexe.</p>" },
+                    { "title": "Demografie", "content": "<ul><li><b>Vârstă:</b> 35-65+ ani</li><li><b>Gen:</b> ambele genuri, cu accent pe femei pentru dureri menstruale și migrene</li><li><b>Locație:</b> urban, periurban și rural</li><li><b>Nivel socio-economic:</b> scăzut, mediu și mediu-ridicat</li><li><b>Experiență cu medicamente:</b> utilizatori informați, nu prima linie de tratament</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Dureri moderate spre severe persistente care nu se ameliorează suficient cu paracetamol sau ibuprofen simplu. Frustrarea de a avea dureri recurente care afectează calitatea vieții și productivitatea. Nevoia unei soluții mai puternice dar care să rămână sigură pentru utilizare ocazională.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Persoane cu dureri postoperatorii sau posttraumatice moderate</li><li>Sportivi cu dureri musculare și articulare</li><li>Persoane cu migrene episodice care nu răspund la tratamentul de prima linie</li><li>Pacienți cu dureri dentare severe în așteptarea tratamentului stomatologic</li></ul>" },
+                    { "title": "Sezonalitatea", "content": "<p>Pattern relativ constant pe tot parcursul anului pentru durerile cronice. Creștere ușoară în perioada rece: octombrie-martie (dureri articulare, migrene de stres). Creștere în perioada de stres: septembrie (rentrée), decembrie-ianuarie (stres sărbători). Creștere în perioada alergiilor: martie-mai (dureri de cap secundare). Menținere constantă pentru dureri menstruale și dentare.</p>" },
+                    { "title": "Competitori principali", "content": "<p>ANTINEVRALGIC, CODAMIN, FASCONAL, IBALGIN, SOLPADEINA</p>" }
+                ]
+            },
+            {
+                "name": "CAFFETIN DUO COMPRIMATE FILMATE",
+                "description_short": "Tratamentul durerii ușoare spre moderate (dureri de cap, spate, menstruale) la adulți de la 18 ani.",
+                "details": [
+                    { "title": "Informații generale", "content": "<p><b>Categorie:</b> OTC (Over-The-Counter)<br><b>Segment:</b> DURERE<br><b>Arie terapeutică:</b> Durere de intensitate slabă spre moderată</p>" },
+                    { "title": "Descriere", "content": "<p>Caffetin DUO este utilizat pentru tratamentul de scurtă durată al durerii ușoare spre moderate asociate cu durere de cap, durere de spate, dureri menstruale, dureri dentare, dureri reumatice și musculare.</p>" },
+                    { "title": "Caracteristici", "content": "<ul><li>Comprimate filmate de culoare albă până la aproape albă, biconvexe, de formă alungită</li><li><b>Compoziție per comprimat:</b> Paracetamol 500 mg, Ibuprofen 200 mg</li><li>Marcate cu cerc dublu pe o față</li><li>Dimensiuni: 21 mm x 10,5 mm ± 0,5 mm</li><li>Administrare orală cu alimente pentru minimizarea reacțiilor adverse</li><li>Ambalaj: cutie cu 1 blister (10 comprimate)</li></ul>" },
+                    { "title": "Avantaje competitive", "content": "<ul><li>Combinație optimă de paracetamol și ibuprofen cu mecanisme de acțiune complementare</li><li>Analgezie superioară față de administrarea separată a componentelor</li><li>Acțiune sinergică pentru dureri ușoare spre moderate care nu răspund la monoterapie cu efect rapid</li><li>Eficacitate dovedită clinic pentru dureri complexe</li><li>Profil de siguranță optimizat prin dozele echilibrate ale componentelor</li></ul>" },
+                    { "title": "Beneficii principale (pentru consumator)", "content": "<ul><li>Ameliorare superioară a durerilor slabe spre moderate față de paracetamol sau ibuprofen administrate singure</li><li>Acțiune rapidă și eficace pentru multiple tipuri de durere și febră</li><li>Convenabil prin administrarea unui singur comprimat în loc de medicamente separate</li></ul>" },
+                    { "title": "Reasons to believe", "content": "<ul><li>Studii clinice care demonstrează eficacitatea superioară a combinației față de monoterapie</li><li>Paracetamol cu acțiune centrală complementată de ibuprofen cu acțiune periferică antiinflamatoare</li><li>Mecanisme de acțiune sinergice validate științific</li><li>Profil farmacologic optimizat pentru analgezie și antipireză maximă</li><li>Experiență clinică extinsă cu ambele componente active</li></ul>" },
+                    { "title": "USP / Diferențiatori cheie", "content": "<p><b>\"CÂND DUREREA DISPARE, VIAȚA REÎNCEPE\"</b></p><ul><li>Combinație sigură de 500 mg paracetamol + 200 mg ibuprofen cu efecte adverse mult reduse</li><li>Analgezie superioară pentru dureri slabe spre moderate care necesită mai mult decât monoterapia</li><li>Acțiune rapidă prin mecanisme complementare (central + periferic)</li><li>Formulă validată clinic special pentru durerea care nu răspunde la tratamentul simplu</li></ul>" },
+                    { "title": "Vârsta de administrare", "content": "<p><b>De la 18 ani în sus.</b> Contraindicat la copii și adolescenți sub 18 ani.</p>" },
+                    { "title": "Profil public țintă principal (Core Target)", "content": "<p>Persoane peste 18 ani care suferă de dureri slab spre moderate complexe care nu se ameliorează suficient cu analgezice simple. Persoane active care au nevoie de ameliorare rapidă și eficientă pentru a-și putea continua activitățile normale, și care preferă convenabilitatea unui singur comprimat în loc de combinații multiple.</p>" },
+                    { "title": "Demografie", "content": "<ul><li><b>Vârstă:</b> 25-55 ani, și 55+ secundar</li><li><b>Gen:</b> ambele genuri, cu accent pe femei</li><li><b>Locație:</b> urban și periurban</li><li><b>Nivel socio-economic:</b> mediu și ridicat</li><li><b>Stil de viață:</b> activ, angajați cu responsabilități, părinți, sportivi amatori, corporatiști</li><li><b>Experiență cu medicamente:</b> utilizatori informați care înțeleg conceptul de terapie combinată</li></ul>" },
+                    { "title": "Nevoie / Problemă cheie (Pain Point)", "content": "<p>Dureri ușoare spre moderate persistente care nu răspund suficient la analgezice simple și necesită combinarea mai multor medicamente. Frustrarea de a lua multiple pastile pentru aceeași problemă și nevoia unei soluții mai eficiente și convenabile. Dureri complexe care afectează calitatea vieții și necesită ameliorare rapidă pentru menținerea productivității.</p>" },
+                    { "title": "Segmente de public secundare", "content": "<ul><li>Persoane cu dureri de cap aproape zilnice</li><li>Sportivi cu dureri musculo-scheletice moderate</li><li>Persoane cu dureri de spate cronice episodice</li><li>Femei cu dismenoree severă care nu răspunde la monoterapie</li><li>Persoane cu dureri dentare complexe</li><li>Pacienți cu dureri posttraumatice moderate</li></ul>" },
+                    { "title": "Sezonalitatea", "content": "<p>Pattern relativ constant pe tot parcursul anului pentru durerile cronice. Creștere în sezonul rece: octombrie-martie (dureri articulare, musculare). Creștere în perioada de activitate fizică intensă: aprilie-septembrie (sporturi, activități outdoor). Vârfuri în perioada de stres: septembrie (revenirea la muncă), decembrie-ianuarie (stres sărbători). Menținere constantă pentru dureri menstruale și episoade acute de durere.</p>" },
+                    { "title": "Competitori principali", "content": "<p>BIOFEN EXTRA, ANALGEX, COMBIFEXIN, PADUDEN DUO, SYNOCAM</p>" }
+                ]
+            }
+        ];
+
+        const instructionsText = `# INSTRUCȚIUNI DE SISTEM — CAFFETIN
+
+## 1. ROL
+Ești Asistentul pentru brandul **CAFFETIN**. Scop: să asisti echipa de marketing în generarea de conținut, strategii și suport operațional pentru gama de medicamente OTC CAFFETIN pentru durere și simptomele de răceală/gripă.
+
+## 2. REFERINȚE LA INFORMAȚII
+**IMPORTANT:** Toate informațiile detaliate despre brand, cele 4 produse din gamă, audiențele țintă, beneficii, USP-uri, competitori și alte date specifice se găsesc în fișierul \`informatii_caffetin.txt\`. 
+
+Consultă întotdeauna acest fișier pentru:
+- Descrierile exacte ale celor 4 produse:
+  - **Caffetin Cold Plus** (12+) - răceală/gripă toate simptomele
+  - **Caffetin ColdMax** (16+) - răceală/gripă severă, format băutură  
+  - **Caffetin clasic** (12+) - dureri moderate-severe, conține codeină
+  - **Caffetin DUO** (18+) - dureri ușoare-moderate, paracetamol+ibuprofen
+- Profilurile audiențelor țintă diferite pentru fiecare produs
+- Segmentele de business: DURERE (1% MS) și RĂCEALĂ/GRIPĂ (0.45% MS)
+- Beneficiile și caracteristicile specifice fiecărui produs
+- USP-urile și diferențiatorii cheie
+- Informațiile despre competitori
+- Sezonalitatea fiecărui produs
+- Disclaimer-urile legale și vizele ANM
+
+## 3. PRINCIPII DE COMUNICARE / TON
+- **Ton:** eficient, cunoscător, de încredere, empatic, orientat către soluții
+- **Abordare:** Expertiza farmaceutică în formule combinate validate clinic
+- **Limbaj:** profesional medical dar accesibil, subliniază eficacitatea dovedită
+- **Focus:** soluții rapide și eficiente adaptate nevoilor specifice
+- **Obiectiv:** Consolidarea poziției de lider în analgezice combinate și extinderea în segmentul răceală/gripă
+
+## 4. SPECIFICITĂȚI COMUNICARE CAFFETIN
+
+### Aspecte cheie de subliniat:
+- **Medicamente OTC cu formule combinate** validate clinic
+- **Ingrediente active complementare** pentru eficacitate maximă
+- **Adaptare la intensitatea simptomelor** și nevoile specifice
+- **Experiență pe piața românească** cu încrederea consumatorilor
+- **Acțiune rapidă** prin combinații sinergice optimizate
+
+### Mesaje comune pentru toate produsele:
+- Formule combinate pentru eficacitate superioară
+- Ingrediente active validate clinic
+- Acțiune rapidă și durabilă
+- Adaptate nevoilor specifice ale fiecărui consumator
+
+## 5. INSTRUCȚIUNI PENTRU RĂSPUNSURI
+
+### Pentru alegerea produsului potrivit:
+**ALGORIMUL DE SELECȚIE:**
+1. **Identifică problema:** Durere sau Răceală/Gripă?
+2. **Evaluează intensitatea:** Ușoară, moderată sau severă?
+3. **Verifică vârsta:** 12+, 16+ sau 18+?
+4. **Consideră preferințele:** Comprimat sau băutură?
+
+### Pentru conținut social media:
+- **Identifică produsul specific** pentru situația descrisă
+- **Oferă 2 variante de copy:**
+  - **Scurtă:** ≤ 60 caractere (focus pe beneficiul imediat)
+  - **Lungă:** ≤ 150 caractere (include context + soluție + diferențiator)
+- **Include CTA relevant** pentru produsul specific
+- **3 hashtag-uri relevante:** #durere #raceala #eficient #rapid #caffetin
+
+### Pentru materiale educative/medicale:
+Structurează ca:
+- **Tipul și intensitatea problemei** (durere ușoară vs. severă, răceală simplă vs. gripă)
+- **Produsul potrivit** din gamă cu justificarea alegerii
+- **Explicația ingredientelor active** și mecanismele complementare
+- **Modul de administrare** și restricțiile de vârstă
+- **Eficacitatea superioară** a formulei combinate vs. monoterapie
+- **Încurajarea consultării medicale** când este necesar
+
+## 6. DIFERENȚIEREA PRODUSELOR ÎN COMUNICARE
+
+### Segmentul RĂCEALĂ ȘI GRIPĂ
+
+#### Caffetin Cold Plus (12+):
+- **Audiența:** Adulți și adolescenți activi cu simptome multiple
+- **Focus:** Soluție completă 4-în-1, include vitamina C
+- **Mesaje:** "Toate simptomele într-o singură pastilă"
+- **USP:** Formulă cu 4 ingrediente + vitamina C
+
+#### Caffetin ColdMax (16+):
+- **Audiența:** Adulți cu simptome severe, preferă băuturi
+- **Focus:** Doză maximă paracetamol, absorbție rapidă
+- **Mesaje:** "Pentru când simptomele sunt severe"
+- **USP:** 1000mg paracetamol, aromă lămâie-mentol
+
+### Segmentul DURERE
+
+#### Caffetin clasic (12+):
+- **Audiența:** Persoane cu dureri moderate-severe recurente
+- **Focus:** Conține codeină, pentru dureri rezistente
+- **Mesaje:** "Când durerea e un chin, nu uita de Caffetin"
+- **USP:** Singurul din gamă cu codeină, 4 ingrediente active
+
+#### Caffetin DUO (18+):
+- **Audiența:** Adulți activi cu dureri ușoară-moderate complexe
+- **Focus:** Combinație paracetamol+ibuprofen, convenabilitate
+- **Mesaje:** "Când durerea dispare, viața reîncepe"
+- **USP:** Analgezie superioară prin mecanisme complementare
+
+## 7. CONSTRÂNGERI DE COMUNICARE / LEGAL
+- **OBLIGATORIU:** Include disclaimer-ul ANM cu viza de publicitate
+- **IMPORTANT:** Sunt medicamente OTC cu restricții de vârstă specifice
+- **CODEINĂ:** Atenție specială la comunicarea pentru Caffetin clasic
+- **DOZAJ:** Respectă strict limitările de doză și vârstă
+- **COMBINAȚII:** Subliniază beneficiile vs. riscurile combinațiilor
+
+## 8. GRUPURI ȚINTĂ SPECIFICE
+
+### Pentru Cold Plus - Familii active cu adolescenți:
+- **Ton:** Practic și cuprinzător
+- **Focus:** Eficiență pentru toată familia (12+)
+- **Mesaje:** Soluție completă, revenire rapidă la activități
+
+### Pentru ColdMax - Adulți cu simptome severe:
+- **Ton:** Puternic și reconfortant
+- **Focus:** Tratament intensiv, experiență plăcută
+- **Mesaje:** Maximum de eficacitate într-o băutură caldă
+
+### Pentru Caffetin clasic - Persoane cu dureri persistente:
+- **Ton:** Înțelegător și expert
+- **Focus:** Soluție pentru dureri care nu cedează
+- **Mesaje:** Pentru când analgezicele simple nu ajung
+
+### Pentru Caffetin DUO - Profesioniști activi:
+- **Ton:** Eficient și convenabil
+- **Focus:** Soluție inteligentă, o pastilă în loc de două
+- **Mesaje:** Analgezie superioară fără complicații
+
+## 9. DIFERENȚIATORI OBLIGATORII DE COMUNICAT
+
+### Pentru segmentul RĂCEALĂ/GRIPĂ:
+- Formule complete multi-simptomatice
+- Acțiune rapidă prin ingrediente complementare
+- Includerea vitaminei C (Cold Plus) sau doză maximă (ColdMax)
+
+### Pentru segmentul DURERE:
+- Superioritatea formulelor combinate vs. monoterapie
+- Adaptarea la intensitatea durerii (DUO vs. clasic)
+- Mecanisme de acțiune complementare
+
+### Față de competitori:
+- Experiența pe piața românească
+- Validarea clinică a formulelor combinate
+- Adaptarea precisă la tipul și intensitatea simptomelor
+
+## 10. WORKFLOW RECOMANDAT
+1. **Identifică categoria de probleme** (durere vs. răceală/gripă)
+2. **Evaluează intensitatea** și caracteristicile simptomelor
+3. **Verifică vârsta** utilizatorului țintă
+4. **Consultă** \`informatii_caffetin.txt\` pentru produsul specific
+5. **Adaptează** tonul la audiența și intensitatea problemei
+6. **Subliniază** diferențiatorii relevanți ai formulei combinate
+7. **Include** informațiile legale necesare (viza ANM)
+8. **Recomandă** consultarea medicului când este cazul
+
+## 11. SEZONALITATE ȘI TIMING
+
+### Segmentul RĂCEALĂ/GRIPĂ:
+- **Oct-Mar:** Vârf pentru ambele produse (sezon gripal)
+- **Nov-Feb:** Maximum pentru ColdMax (simptome severe)
+- **Sept, Apr:** Tranziții sezoniere, creștere moderată
+
+### Segmentul DURERE:
+- **Pattern constant:** Dureri cronice pe tot parcursul anului
+- **Oct-Mar:** Creștere ușoară (dureri articulare, stres)
+- **Sept, Dec-Ian:** Vârfuri de stres (rentrée, sărbători)
+
+## 12. MESAJE DIFERENȚIATE PENTRU FIECARE PRODUS
+
+### Cold Plus:
+"Toate simptomele răcelii într-o singură pastilă - plus vitamina C pentru imunitate"
+
+### ColdMax:
+"Când gripa lovește tare, alege puterea maximă într-o băutură caldă și reconfortantă"
+
+### Caffetin clasic:
+"Pentru dureri care nu cedează la analgezice simple - formula cu codeină și cafeină"
+
+### Caffetin DUO:
+"De ce să iei două pastile când una face treaba mai bine? Paracetamol + Ibuprofen = analgezie superioară"
+
+## 13. ASPECTE DE SIGURANȚĂ SPECIFICE
+- **Codeină (Caffetin clasic):** Atenție la dependență, folosire pe termen scurt
+- **Paracetamol (ColdMax):** Doză maximă 1000mg, atenție la alte surse
+- **Combinații:** Educarea despre beneficii vs. precauții
+- **Vârste:** Respectarea strictă a limitelor de vârstă
+
+## 14. NOTA FINALĂ
+Consultă întotdeauna fișierul \`informatii_caffetin.txt\` pentru informații complete și actualizate înainte de a genera orice conținut pentru brandul CAFFETIN. Fiecare produs are audiența și poziționarea sa specifică - asigură-te că recomanzi produsul potrivit pentru problema și vârsta specifice, respectând întotdeauna cerințele legale pentru medicamentele OTC.`;
+        
+         const responsabiliData = [
+            { name: "Alexandra Oiță", role: "Marketing Manager", emoji: "⚙️" },
+            { name: "Alexandru Derdene", role: "Brand Manager", emoji: "📈" },
+            { name: "Claudiu Ciobanu", role: "Digital Marketing", emoji: "🤖" }
+        ];
+
+        // --- FUNCTII DE RENDERIZARE ---
+
+        function createInfoCard(title, content, iconSvg) {
+            return `
+                <div class="brand-card bg-white p-6 rounded-xl shadow-lg fade-in-up h-full">
+                    <div class="flex items-center mb-3">
+                        ${iconSvg}
+                        <h3 class="text-lg font-bold text-slate-800 ml-3">${title}</h3>
+                    </div>
+                    <p class="text-slate-600 text-base">${content || 'N/A'}</p>
+                </div>
+            `;
+        }
+        
+        function renderBrandInfo() {
+            const container = document.getElementById('brand-info');
+            const icons = {
+                essence: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>`,
+                objective: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+                voice: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 icon-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>`
+            };
+            let html = createInfoCard('Esența brandului', brandData.essence, icons.essence);
+            html += createInfoCard('Obiectivul principal', brandData.objective, icons.objective);
+            html += createInfoCard('Vocea brandului', brandData.voice, icons.voice);
+            container.innerHTML = html;
+        }
+
+        function renderProductsAccordion() {
+            const container = document.getElementById('products-accordion');
+            let html = '';
+            productsData.forEach(product => {
+                let detailsHtml = '';
+                product.details.forEach(section => {
+                     detailsHtml += `
+                        <div class="mb-8">
+                            <h4 class="text-lg font-bold text-brand mb-3">${section.title}</h4>
+                            <div class="prose prose-sm max-w-none text-slate-700 leading-relaxed">${section.content}</div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-lg fade-in-up">
+                        <h2>
+                            <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="false">
+                                <div class="flex flex-col">
+                                    <span class="text-xl font-bold text-slate-800">${product.name}</span>
+                                    <span class="text-sm font-normal text-slate-500 mt-1 pr-4">${product.description_short}</span>
+                                </div>
+                                <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 icon-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                        </h2>
+                        <div class="accordion-content">
+                            <div class="border-t border-slate-200 p-6">
+                               ${detailsHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+        
+        function renderAiInstructions() {
+            const container = document.getElementById('ai-instructions-accordion');
+            const accordionTitle = `# INSTRUCȚIUNI DE SISTEM - ${brandData.name.toUpperCase()}`;
+
+            container.innerHTML = `
+                <div class="bg-slate-800 rounded-xl shadow-lg fade-in-up">
+                    <h2>
+                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left rounded-xl" aria-expanded="true">
+                            <span class="text-lg font-bold text-slate-200 font-mono tracking-tight">${accordionTitle}</span>
+                            <svg class="accordion-arrow w-6 h-6 shrink-0 transition-transform duration-300 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </h2>
+                    <div class="accordion-content">
+                        <div class="border-t border-slate-700 p-4 relative ai-instructions-container">
+                             <button id="copy-ai-btn" class="absolute top-6 right-6 bg-brand hover:bg-brand-dark text-slate-800 font-bold py-2 px-4 rounded-lg transition-all duration-300 z-10">
+                                Copiază
+                            </button>
+                            <pre id="ai-instructions-text" class="text-slate-200 pr-28">${instructionsText}</pre>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderResponsabili() {
+            const container = document.getElementById('responsabili-container');
+            let html = '';
+            responsabiliData.forEach(person => {
+                html += `
+                     <div class="bg-white p-4 rounded-xl shadow-md flex items-center space-x-4">
+                        <span class="text-3xl">${person.emoji}</span>
+                        <div>
+                            <p class="font-bold text-slate-800 text-left">${person.name}</p>
+                            <p class="text-sm text-slate-500 text-left">${person.role}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function setupButtonListeners() {
+            // Acordeon
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.parentElement.nextElementSibling;
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                    button.classList.toggle('active');
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + 100 + "px"; // Add some buffer
+                        content.style.padding = "0";
+                    } else {
+                        content.style.maxHeight = null;
+                        content.style.padding = "0 1.5rem";
+                    }
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('brand-name-header').textContent = brandData.name;
+            document.title = `Brand Hub MagnaPharm - ${brandData.name}`;
+
+            renderBrandInfo();
+            renderProductsAccordion();
+            renderAiInstructions();
+            renderResponsabili();
+            
+            setupButtonListeners();
+            
+            // Auto-open AI instructions
+            const aiAccordionButton = document.querySelector('#ai-instructions-accordion .accordion-button');
+            if (aiAccordionButton) {
+                 aiAccordionButton.click();
+            }
+
+            // Attach listener for the copy button
+            const copyBtn = document.getElementById('copy-ai-btn');
+            if(copyBtn) {
+                 copyBtn.addEventListener('click', () => {
+                    const copyText = document.getElementById('ai-instructions-text').textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = copyText;
+                    
+                    textArea.style.position = "fixed";
+                    textArea.style.top = 0;
+                    textArea.style.left = 0;
+                    textArea.style.width = "2em";
+                    textArea.style.height = "2em";
+                    textArea.style.padding = 0;
+                    textArea.style.border = "none";
+                    textArea.style.outline = "none";
+                    textArea.style.boxShadow = "none";
+                    textArea.style.background = "transparent";
+                    
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        const successful = document.execCommand('copy');
+                        if(successful) {
+                            copyBtn.textContent = 'Copiat!';
+                            copyBtn.classList.remove('bg-brand', 'hover:bg-brand-dark', 'text-slate-800');
+                            copyBtn.classList.add('bg-green-500', 'text-white');
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copiază';
+                                copyBtn.classList.remove('bg-green-500', 'text-white');
+                                copyBtn.classList.add('bg-brand', 'hover:bg-brand-dark', 'text-slate-800');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Nu s-a putut copia textul', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                });
+            }
+
+            // Stagger animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.style.animationDelay = `${index * 100}ms`;
+            });
+        });
+    </script>
+</body>
+</html>
+
