@@ -59,6 +59,24 @@
         }
         .icon-brand { color: var(--brand-color); }
 
+        .brand-pill {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .brand-pill:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 142, 206, 0.4), 0 0 20px rgba(0, 142, 206, 0.2);
+        }
+
+        .home-button {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .home-button:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
     </style>
 </head>
 <body class="text-slate-700">
@@ -66,9 +84,20 @@
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
 
         <!-- Antet Hero -->
-        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl">
+        <header class="mb-12 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center text-white shadow-2xl relative">
+            <!-- Home Button -->
+            <a href="index.html" class="home-button absolute top-6 left-6 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 group" title="Înapoi la pagina principală">
+                <svg class="w-6 h-6 text-white group-hover:text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+            </a>
+
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight"><a href="https://brands.clxdigital.ro/" class="text-white hover:text-slate-200 transition-colors duration-300">Brand Hub MagnaPharm</a></h1>
-            <p id="brand-name-header" class="text-brand text-xl md:text-4xl font-semibold mt-2">Sargenor</p>
+            <div class="mt-4 flex justify-center">
+                <span id="brand-name-header" class="brand-pill inline-flex items-center px-6 py-3 bg-brand text-white text-xl md:text-2xl font-bold rounded-full shadow-lg border-2 border-white/20 backdrop-blur-sm cursor-pointer">
+                    Sargenor
+                </span>
+            </div>
             <div id="header-buttons" class="mt-6 flex flex-wrap justify-center gap-4">
                 <a href="https://magnapharmholdings-my.sharepoint.com/:x:/g/personal/claudiu_ciobanu_magnapharm_eu/ERmYrrTfy09Nral2Pf2AE34B_mamzb8pwkodOgJrXDxqCg?e=ELubH6&nav=MTVfezc4RkEzN0EyLUY5QzctNEEyMC04RDJELTRBNzEzNzM1NjQwQ30" target="_blank" rel="noopener noreferrer" class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
                     Planificare campanii 📆
