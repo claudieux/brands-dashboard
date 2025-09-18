@@ -485,7 +485,12 @@ Consultă întotdeauna fișierul \`informatii_colactase.txt\` pentru informații
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('brand-name-header').textContent = brandData.name;
+            document.getElementById('brand-name-header').innerHTML =
+  `<a id="brand-name-link" href="https://co-lactase.ro/" target="_blank" rel="noopener noreferrer"
+      class="inline-block hover:text-slate-200 transition-transform duration-150 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">
+     ${brandData.name}
+   </a>`;
+
             renderBrandInfo();
             renderProductsAccordion();
             renderAiInstructions(); // This creates the copy button

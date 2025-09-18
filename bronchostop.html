@@ -249,6 +249,25 @@
                 }
             }
         ];
+		
+		// --- PATCH: adaugare / actualizare Vârstă de administrare + Sezonalitate pentru DUO ---
+(function(){
+  const duo = productsData.find(p => p.name && p.name.toLowerCase().includes('duo'));
+  if (!duo) { console.warn('Patch DUO: nu am găsit produsul DUO în productsData'); return; }
+
+  // asigurăm existența obiectelor
+  if (!duo.details) duo.details = {};
+  if (!duo.details['Audiență și piață']) duo.details['Audiență și piață'] = {};
+
+  duo.details['Audiență și piață']['Vârsta de administrare'] =
+`De la 6 ani. Nu se recomandă sub 6 ani din cauza riscului de înghițire neintenționată a gumei întregi. Pentru copii 6-11 ani: 1 gumă la interval de 3-4 ore (maxim 6 gume/zi). Pentru adolescenți și adulți peste 12 ani: 2 gume la interval de 3-4 ore (maxim 12 gume/zi).`;
+
+  duo.details['Audiență și piață']['Sezonalitate'] =
+`Vârf în perioada octombrie-martie, similar siropului, dar cu menținerea unei cereri constante în toate sezoanele. Creștere în septembrie odată cu revenirea la activitățile profesionale și școlare. Cerere susținută în perioada călătoriilor (vară și sărbători) datorită portabilității. Pattern mai uniform decât siropul datorită nevoii constante de soluții portabile pentru adulții activi.`;
+
+  console.log('Patch DUO aplicat: Vârsta de administrare + Sezonalitate actualizate.');
+})();
+
         
         const instructionsText = `# INSTRUCȚIUNI DE SISTEM — BRONCHOSTOP
 
@@ -558,7 +577,12 @@ Consultă întotdeauna fișierul \`informatii_bronchostop.txt\` pentru informaț
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('brand-name-header').textContent = brandData.name;
+            document.getElementById('brand-name-header').innerHTML =
+  `<a id="brand-name-link" href="https://bronchostop.ro/" target="_blank" rel="noopener noreferrer"
+      class="inline-block hover:text-slate-200 transition-transform duration-150 ease-in-out hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">
+     ${brandData.name}
+   </a>`;
+
             renderBrandInfo();
             renderProductsAccordion();
             renderAiInstructions();
