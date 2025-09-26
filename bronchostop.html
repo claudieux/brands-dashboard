@@ -157,7 +157,7 @@
                             <span class="bg-brand text-white text-lg font-bold rounded-full h-8 w-8 flex items-center justify-center shrink-0">3</span>
                             <h3 class="ml-4 text-xl font-bold text-slate-800">Încărcarea fișierelor</h3>
                         </div>
-                        <p class="mt-4 text-slate-600">(Recomandat) Apasă pe <strong class="font-semibold text-slate-700">Add Files</strong> pentru a încărca materiale relevante (prezentări, broșuri) pentru un context complet.</p>
+                        <p class="mt-4 text-slate-600">Descarcă <a href="#" onclick="downloadFile('https://brands.clxdigital.ro/Informatii/informatii_bronchostop.md', 'informatii_bronchostop.md'); return false;" class="text-brand hover:text-brand font-semibold underline decoration-2 hover:decoration-brand transition-all duration-200">Informații despre brand</a> și <a href="#" onclick="downloadFile('https://brands.clxdigital.ro/Informatii/Alte-fisiere/Prospecte-Bronchostop.zip', 'Prospecte-Bronchostop.zip'); return false;" class="text-brand hover:text-brand font-semibold underline decoration-2 hover:decoration-brand transition-all duration-200">PROSPECTELE</a> (le vei dezarhiva), apoi apasă pe <strong class="font-semibold text-slate-700">Add Files</strong> și încarcă-le în Asistentul AI nou creat.</p>
                     </div>
                 </div>
 
@@ -666,6 +666,26 @@ Consultă întotdeauna fișierul \`informatii_bronchostop.txt\` pentru informaț
                 el.style.animationDelay = `${index * 100}ms`;
             });
         });
+
+        // Function to force download of files
+        function downloadFile(url, filename) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(link.href);
+                })
+                .catch(error => {
+                    console.error('Error downloading file:', error);
+                    // Fallback: open in new tab
+                    window.open(url, '_blank');
+                });
+        }
     </script>
 </body>
 </html>
