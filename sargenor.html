@@ -525,6 +525,76 @@ Consultă **întotdeauna ambele fișiere** pentru o strategie completă. Toată 
                     window.open(url, '_blank');
                 });
         }
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.title = `Brand Hub MagnaPharm - ${brandData.name}`;
+            document.getElementById('brand-name-header').innerHTML =
+  `<a id="brand-name-link" href="https://sargenor.ro/" target="_blank" rel="noopener noreferrer"
+      class="inline-block focus:outline-none focus:ring-2 focus:ring-blue-300 rounded">
+     ${brandData.name}
+   </a>`;
+
+            renderBrandInfo();
+            renderProductsAccordion();
+            renderAiInstructions();
+
+            setupButtonListeners();
+
+            // Auto-open AI instructions
+            const aiAccordionButton = document.querySelector('#ai-instructions-accordion .accordion-button');
+            if (aiAccordionButton) {
+                 aiAccordionButton.click();
+            }
+
+            // Attach listener for the copy button
+            const copyBtn = document.getElementById('copy-ai-btn');
+            if(copyBtn) {
+                 copyBtn.addEventListener('click', () => {
+                    const copyText = document.getElementById('ai-instructions-text').textContent;
+                    const textArea = document.createElement("textarea");
+                    textArea.value = copyText;
+
+                    textArea.style.position = "fixed";
+                    textArea.style.top = 0;
+                    textArea.style.left = 0;
+                    textArea.style.width = "2em";
+                    textArea.style.height = "2em";
+                    textArea.style.padding = 0;
+                    textArea.style.border = "none";
+                    textArea.style.outline = "none";
+                    textArea.style.boxShadow = "none";
+                    textArea.style.background = "transparent";
+
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+
+                    try {
+                        const successful = document.execCommand('copy');
+                        if(successful) {
+                            copyBtn.textContent = 'Copiat!';
+                            copyBtn.classList.remove('bg-brand');
+                            copyBtn.classList.add('bg-green-500');
+                            setTimeout(() => {
+                                copyBtn.textContent = 'Copiază';
+                                copyBtn.classList.remove('bg-green-500');
+                                copyBtn.classList.add('bg-brand');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Nu s-a putut copia textul', err);
+                    }
+
+                    document.body.removeChild(textArea);
+                });
+            }
+
+            // Stagger animations
+            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                el.style.animationDelay = `${index * 100}ms`;
+            });
+        });
     </script>
 </body>
 </html>
